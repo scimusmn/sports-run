@@ -68,25 +68,25 @@ export function arenaControl(data) {
   console.log('arenaControl: ' + data.msg);
 
   switch (data.msg) {
-    case 'idle':
+    case 'idle': // Standby mode
       toggleLayers([1], [2,3,4,5,6,7]);
       break;
-    case 'race-soccer':
+    case 'race-press': // Soccer
       toggleLayers([2], [1,3,4,5,6,7]);
       break;
-    case 'race-hockey':
+    case 'race-wiggins': // Basketball
       toggleLayers([3], [1,2,4,5,6,7]);
       break;
-    case 'race-mascot':
+    case 'race-tc': // Mascot
       toggleLayers([4], [1,2,3,5,6,7]);
       break;
-    case 'race-wheelchair':
+    case 'race-haula': // Hockey
       toggleLayers([5], [1,2,3,4,6,7]);
       break;
-    case 'race-basketball':
+    case 'race-braun': // Racer
       toggleLayers([6], [1,2,3,4,5,7]);
       break;
-    case 'race-t-rex':
+    case 'race-trex': // Dinosaur
       toggleLayers([7], [1,2,3,4,5,6]);
       break;
     default:

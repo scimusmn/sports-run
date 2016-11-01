@@ -20,6 +20,7 @@ browser-policy@1.0.9
 browser-policy-common@1.0.10
 browser-policy-content@1.0.11
 browser-policy-framing@1.0.11
+bryanmorgan:webshot@1.0.0
 caching-compiler@1.0.6
 caching-html-compiler@1.0.6
 callback-hook@1.0.9
