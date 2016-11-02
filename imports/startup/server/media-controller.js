@@ -69,25 +69,28 @@ export function arenaControl(data) {
 
   switch (data.msg) {
     case 'idle': // Standby mode
-      toggleLayers([1], [2,3,4,5,6,7]);
+      toggleLayers([1], [2,3,4,5,6,7,8]);
       break;
     case 'race-press': // Soccer
-      toggleLayers([2], [1,3,4,5,6,7]);
+      toggleLayers([2], [1,3,4,5,6,7,8]);
       break;
     case 'race-wiggins': // Basketball
-      toggleLayers([3], [1,2,4,5,6,7]);
+      toggleLayers([3], [1,2,4,5,6,7,8]);
       break;
     case 'race-tc': // Mascot
-      toggleLayers([4], [1,2,3,5,6,7]);
+      toggleLayers([4], [1,2,3,5,6,7,8]);
       break;
     case 'race-haula': // Hockey
-      toggleLayers([5], [1,2,3,4,6,7]);
+      toggleLayers([5], [1,2,3,4,6,7,8]);
       break;
     case 'race-braun': // Racer
-      toggleLayers([6], [1,2,3,4,5,7]);
+      toggleLayers([6], [1,2,3,4,5,7,8]);
       break;
     case 'race-trex': // Dinosaur
-      toggleLayers([7], [1,2,3,4,5,6]);
+      toggleLayers([7], [1,2,3,4,5,6,8]);
+      break;
+    case 'race-thielen': // Football
+      toggleLayers([8], [1,2,3,4,5,6,7]);
       break;
     default:
       console.log('arenaControl: data.msg ' + data.msg + ' not recognized');

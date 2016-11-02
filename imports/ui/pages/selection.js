@@ -43,8 +43,9 @@ export class Selection extends React.Component {
         <Button id='race-haula' bsStyle='default' onClick={ this.selectionClick }>Haula</Button>
         <Button id='race-braun' bsStyle='default' onClick={ this.selectionClick }>Braun</Button>
         <Button id='race-trex' bsStyle='default' onClick={ this.selectionClick }>T Rex</Button>
+        <Button id='race-thielen' bsStyle='default' onClick={ this.selectionClick }>Thielen</Button>
         <br/><br/>
-        <p>Beam break:</p>
+        <p>Simulate beam break:</p>
         <Button id='ln1_ready' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Start</Button>
         <Button id='ln1_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/>
@@ -52,7 +53,7 @@ export class Selection extends React.Component {
         <Button id='ln2_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/><br/>
       </Col>
-    </Row>
+    </Row>;
 
   }
 }

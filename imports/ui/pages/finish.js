@@ -27,8 +27,14 @@ export class Finish extends React.Component {
     s = (s - ms) / 1000;
     let secs = s % 60;
     s = (s - secs) / 60;
+    var mins = s % 60;
+    var hrs = (s - mins) / 60;
 
-    return padZ(secs) + '.' + ms;
+    ms = ms.toString();
+    if (ms.length > 2) ms = ms.substr(0, 2);
+
+    return padZ(hrs) + ':' + padZ(mins) + ':' + padZ(secs) + ':' + padZ(ms);
+
   }
 
   render() {
