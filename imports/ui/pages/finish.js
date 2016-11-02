@@ -14,22 +14,21 @@ export class Finish extends React.Component {
 
   }
 
-  getLaneTime(lane) {
+  formatTime(s) {
 
-    var laneTime = 'x';
+    // Subtract start time from finishtime
+    s = s - this.props.race.startTime;
 
-    if (lane == 1) {
-
-      lanetime = this.props.lane1FinishTime - this.props.startTime;
-
-    } else {
-
-      laneTime = '00:00:00 S';
-
+    function padZ(n) {
+      return (n < 10 ? '0' : '') + n;
     }
 
-    return laneTime;
+    let ms = s % 1000;
+    s = (s - ms) / 1000;
+    let secs = s % 60;
+    s = (s - secs) / 60;
 
+    return padZ(secs) + '.' + ms;
   }
 
   render() {
@@ -40,10 +39,10 @@ export class Finish extends React.Component {
         <h4 className='page-header'>Finish line</h4>
 
         <h3>Lane 1</h3>
-        <h1>{ this.props.race.lane1FinishTime }</h1>
+        <h1>{ this.formatTime(this.props.race.lane1FinishTime) }</h1>
 
         <h3>Lane 2</h3>
-        <h1>{ this.props.race.lane2FinishTime }</h1>
+        <h1>{ this.formatTime(this.props.race.lane2FinishTime) }</h1>
 
       </Col>
     </Row>;
