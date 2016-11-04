@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { Loading } from '../components/loading.js';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export class Finish extends React.Component {
 
@@ -43,10 +44,14 @@ export class Finish extends React.Component {
     if (this.props.race['lane' + laneNum + 'Ready'] == true) {
 
       return (
-        <span>
+        <ReactCSSTransitionGroup
+          transitionName='finish'
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+        >
           <h3>Lane {laneNum}</h3>
           <h1>{ this.formatTime(this.props.race['lane' + laneNum + 'FinishTime']) }</h1>
-        </span>
+        </ReactCSSTransitionGroup>
       );
 
     } else {
