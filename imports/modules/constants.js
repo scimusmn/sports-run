@@ -4,6 +4,7 @@ export default class Constants {};
 // to start race, and race
 // actually starting.
 Constants.PRE_RACE_DELAY = 5000;
+Constants.POST_RACE_DELAY = 12000;
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;

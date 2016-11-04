@@ -18,6 +18,7 @@ export class Finish extends React.Component {
 
     // Subtract start time from finishtime
     s = s - this.props.race.startTime;
+    if (s < 0) s = 0;
 
     function padZ(n) {
       return (n < 10 ? '0' : '') + n;
@@ -37,18 +38,35 @@ export class Finish extends React.Component {
 
   }
 
+  renderLaneTime(laneNum) {
+
+    if (this.props.race['lane' + laneNum + 'Ready'] == true) {
+
+      return (
+        <span>
+          <h3>Lane {laneNum}</h3>
+          <h1>{ this.formatTime(this.props.race['lane' + laneNum + 'FinishTime']) }</h1>
+        </span>
+      );
+
+    } else {
+
+      return (
+        <span></span>
+      );
+
+    }
+
+  }
+
   render() {
 
     return <Row>
       <Col xs={ 12 }>
 
         <h4 className='page-header'>Finish line</h4>
-
-        <h3>Lane 1</h3>
-        <h1>{ this.formatTime(this.props.race.lane1FinishTime) }</h1>
-
-        <h3>Lane 2</h3>
-        <h1>{ this.formatTime(this.props.race.lane2FinishTime) }</h1>
+        { this.renderLaneTime(1) }
+        { this.renderLaneTime(2) }
 
       </Col>
     </Row>;
