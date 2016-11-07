@@ -14,7 +14,6 @@ export class Finish extends React.Component {
   constructor(props) {
 
     super(props);
-    this.shouldShowLane = this.shouldShowLane.bind(this);
 
   }
 
@@ -42,22 +41,12 @@ export class Finish extends React.Component {
 
   }
 
-  shouldShowLane(laneNum) {
-
-    if (this.props.race['lane' + laneNum + 'Ready'] == true) {
-      return true;
-    }else {
-      return false;
-    }
-
-  }
-
   renderLaneTime(laneNum) {
 
     if (this.props.race['lane' + laneNum + 'Ready'] == true) {
 
       return (
-          <LaneTimer laneTitle={'Lane ' + laneNum} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
+        <LaneTimer laneTitle={'Lane ' + laneNum} falseStart={this.props.race['lane' + laneNum + 'FalseStart']} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
       );
 
     } else {

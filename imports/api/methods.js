@@ -38,12 +38,16 @@ Meteor.methods({
     switch (data.msg) {
       case 'ln1_ready':
         if (rm.isState(Constants.STATE_PRE_RACE)) {
+          rm.updateRaceState({lane1Ready:true, lane1FalseStart:true});
+        } else if (rm.isState(Constants.STATE_RACING)) {
           rm.updateRaceState({lane1Ready:true});
         }
 
         break;
       case 'ln2_ready':
         if (rm.isState(Constants.STATE_PRE_RACE)) {
+          rm.updateRaceState({lane2Ready:true, lane2FalseStart:true});
+        } else if (rm.isState(Constants.STATE_RACING)) {
           rm.updateRaceState({lane2Ready:true});
         }
 

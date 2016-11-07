@@ -98,9 +98,11 @@ export default {
       lane1TimerRunning = false;
       lane2TimerRunning = false;
       this.updateRaceState({raceState: Constants.STATE_IDLE,
+                            startTime:0,
                             lane1Ready:false,
                             lane2Ready:false,
-                            startTime:0,
+                            lane1FalseStart:false,
+                            lane2FalseStart:false,
                             lane1FinishTime:0,
                             lane2FinishTime:0, });
 

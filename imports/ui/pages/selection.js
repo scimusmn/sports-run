@@ -46,10 +46,12 @@ export class Selection extends React.Component {
         <Button id='race-thielen' bsStyle='default' onClick={ this.selectionClick }>Thielen</Button>
         <br/><br/>
         <p>Simulate beam break:</p>
-        <Button id='ln1_ready' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Start</Button>
+        <Button id='ln1_ready' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Ready</Button>
+        =======>
         <Button id='ln1_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/>
-        <Button id='ln2_ready' bsStyle='success' onClick={ this.beamBreak }>Lane 2 Start</Button>
+        <Button id='ln2_ready' bsStyle='success' onClick={ this.beamBreak }>Lane 2 Ready</Button>
+        =======>
         <Button id='ln2_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/><br/>
       </Col>
