@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { arenaControl } from '../startup/server/media-controller';
 import rm from '../startup/server/race-manager.js';
+import Constants from '../modules/constants';
 
 Meteor.methods({
 
@@ -15,7 +16,9 @@ Meteor.methods({
 
     if (data.msg.substring(0, 4) == 'race') {
       // New race initiated
-      rm.initiateNewRace(data.msg);
+      if (rm.isState(Constants.STATE_IDLE)) {
+        rm.initiateNewRace(data.msg);
+      }
     }
 
     arenaControl(data);
@@ -34,16 +37,28 @@ Meteor.methods({
 
     switch (data.msg) {
       case 'ln1_ready':
-        rm.updateRaceState({lane1Ready:true});
+        if (rm.isState(Constants.STATE_PRE_RACE)) {
+          rm.updateRaceState({lane1Ready:true});
+        }
+
         break;
       case 'ln2_ready':
-        rm.updateRaceState({lane2Ready:true});
+        if (rm.isState(Constants.STATE_PRE_RACE)) {
+          rm.updateRaceState({lane2Ready:true});
+        }
+
         break;
       case 'ln1_finish':
-        rm.lane1Finish();
+        if (rm.isState(Constants.STATE_RACING)) {
+          rm.lane1Finish();
+        }
+
         break;
       case 'ln2_finish':
-        rm.lane2Finish();
+        if (rm.isState(Constants.STATE_RACING)) {
+          rm.lane2Finish();
+        }
+
         break;
       default:
         console.log('beamBreak: data.msg ' + data.msg + ' not recognized');

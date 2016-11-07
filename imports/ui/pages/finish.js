@@ -2,9 +2,11 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 
-import { Loading } from '../components/loading.js';
+import { Loading } from '../components/loading';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
+import { LaneTimer } from '../components/LaneTimer';
+import TransitionGroup from 'react-addons-transition-group';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export class Finish extends React.Component {
@@ -12,6 +14,7 @@ export class Finish extends React.Component {
   constructor(props) {
 
     super(props);
+    this.shouldShowLane = this.shouldShowLane.bind(this);
 
   }
 
@@ -39,25 +42,28 @@ export class Finish extends React.Component {
 
   }
 
+  shouldShowLane(laneNum) {
+
+    if (this.props.race['lane' + laneNum + 'Ready'] == true) {
+      return true;
+    }else {
+      return false;
+    }
+
+  }
+
   renderLaneTime(laneNum) {
 
     if (this.props.race['lane' + laneNum + 'Ready'] == true) {
 
       return (
-        <ReactCSSTransitionGroup
-          transitionName='finish'
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}
-        >
-          <h3>Lane {laneNum}</h3>
-          <h1>{ this.formatTime(this.props.race['lane' + laneNum + 'FinishTime']) }</h1>
-        </ReactCSSTransitionGroup>
+          <LaneTimer laneTitle={'Lane ' + laneNum} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
       );
 
     } else {
 
       return (
-        <span></span>
+        ''
       );
 
     }
@@ -70,8 +76,12 @@ export class Finish extends React.Component {
       <Col xs={ 12 }>
 
         <h4 className='page-header'>Finish line</h4>
-        { this.renderLaneTime(1) }
-        { this.renderLaneTime(2) }
+        <TransitionGroup>
+          { this.renderLaneTime(1) }
+        </TransitionGroup>
+        <TransitionGroup>
+          { this.renderLaneTime(2) }
+        </TransitionGroup>
 
       </Col>
     </Row>;
@@ -89,7 +99,6 @@ export const FinishContainer = composeWithTracker(function({params}, onData) {
   if (subscription.ready()) {
 
     const race = Races.findOne();
-    console.log(race);
     onData(null, { race });
 
   }

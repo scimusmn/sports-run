@@ -9,7 +9,7 @@ Constants.PRE_RACE_DELAY = 5000;
 // Time after sending signal
 // that lane has finished,
 // and race is actually restarting.
-Constants.POST_RACE_DELAY = 12000;
+Constants.POST_RACE_DELAY = 8000;
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
