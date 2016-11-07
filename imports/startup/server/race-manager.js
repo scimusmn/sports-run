@@ -116,7 +116,7 @@ export default {
 
     Meteor.setTimeout(() => {
 
-      console.log('Go!');
+      console.log('GO!');
       this.updateRaceState({startTime: this.startTimer()});
 
     }, Constants.PRE_RACE_DELAY);

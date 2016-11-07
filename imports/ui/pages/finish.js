@@ -75,7 +75,7 @@ export class Finish extends React.Component {
     return <Row>
       <Col xs={ 12 }>
 
-        <h4 className='page-header'>Finish line</h4>
+        <h4 className='page-header'>Finish line <span className='faded-text'>(Race state: {this.props.race.raceState})</span></h4>
         <TransitionGroup>
           { this.renderLaneTime(1) }
         </TransitionGroup>
