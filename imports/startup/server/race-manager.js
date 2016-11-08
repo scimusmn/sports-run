@@ -2,20 +2,16 @@ import Constants from '../../modules/constants';
 import { Races } from '../../api/races';
 
 let raceId;
-
-let startTime = 0;
-let lane1FinishTime = 0;
-let lane2FinishTime = 0;
 let lane1TimerRunning = false;
 let lane2TimerRunning = false;
-
 let raceTicker = {};
 
 export default {
 
   startTimer() {
 
-    startTime = Date.now();
+    let startTime = Date.now();
+
     lane1TimerRunning = true;
     lane2TimerRunning = true;
 
@@ -36,15 +32,13 @@ export default {
 
     if (lane1TimerRunning == true) {
 
-      lane1FinishTime = Date.now();
-      this.updateRaceState({lane1FinishTime});
+      this.updateRaceState({lane1FinishTime:Date.now()});
 
     }
 
     if (lane2TimerRunning == true) {
 
-      lane2FinishTime = Date.now();
-      this.updateRaceState({lane2FinishTime});
+      this.updateRaceState({lane2FinishTime:Date.now()});
 
     }
 
@@ -55,16 +49,15 @@ export default {
     if (lane1TimerRunning == false) return false;
     lane1TimerRunning = false;
 
-    lane1FinishTime = Date.now();
-    this.updateRaceState({lane1FinishTime});
+    this.updateRaceState({lane1FinishTime:Date.now()});
 
     if (lane2TimerRunning == false) {
-      this.resetForNextRace();
+      this.postRaceSequence();
     } else {
       lane1TimerRunning = false;
     }
 
-    return lane1FinishTime;
+    return true;
 
   },
 
@@ -73,20 +66,19 @@ export default {
     if (lane2TimerRunning == false) return false;
     lane2TimerRunning = false;
 
-    lane2FinishTime = Date.now();
-    this.updateRaceState({lane2FinishTime});
+    this.updateRaceState({lane2FinishTime:Date.now()});
 
     if (lane1TimerRunning == false) {
-      this.resetForNextRace();
+      this.postRaceSequence();
     } else {
       lane2TimerRunning = false;
     }
 
-    return lane2FinishTime;
+    return true;
 
   },
 
-  resetForNextRace() {
+  postRaceSequence() {
 
     this.updateRaceState({raceState: Constants.STATE_POST_RACE});
 
@@ -94,19 +86,19 @@ export default {
 
     Meteor.setTimeout(() => {
 
-      // Reset all attributes to default state
-      lane1TimerRunning = false;
-      lane2TimerRunning = false;
-      this.updateRaceState({raceState: Constants.STATE_IDLE,
-                            startTime:0,
-                            lane1Ready:false,
-                            lane2Ready:false,
-                            lane1FalseStart:false,
-                            lane2FalseStart:false,
-                            lane1FinishTime:0,
-                            lane2FinishTime:0, });
+      this.resetForNextRace();
 
     }, Constants.POST_RACE_DELAY);
+
+  },
+
+  resetForNextRace() {
+
+    // Reset all attributes to default state
+    lane1TimerRunning = false;
+    lane2TimerRunning = false;
+
+    this.updateRaceState(Constants.DEFAULT_RACE_STATE);
 
   },
 

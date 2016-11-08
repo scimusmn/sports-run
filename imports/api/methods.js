@@ -36,19 +36,19 @@ Meteor.methods({
     });
 
     switch (data.msg) {
-      case 'ln1_ready':
+      case 'ln1_start':
         if (rm.isState(Constants.STATE_PRE_RACE)) {
-          rm.updateRaceState({lane1Ready:true, lane1FalseStart:true});
+          rm.updateRaceState({lane1Started:true, lane1FalseStart:true});
         } else if (rm.isState(Constants.STATE_RACING)) {
-          rm.updateRaceState({lane1Ready:true});
+          rm.updateRaceState({lane1Started:true});
         }
 
         break;
-      case 'ln2_ready':
+      case 'ln2_start':
         if (rm.isState(Constants.STATE_PRE_RACE)) {
-          rm.updateRaceState({lane2Ready:true, lane2FalseStart:true});
+          rm.updateRaceState({lane2Started:true, lane2FalseStart:true});
         } else if (rm.isState(Constants.STATE_RACING)) {
-          rm.updateRaceState({lane2Ready:true});
+          rm.updateRaceState({lane2Started:true});
         }
 
         break;

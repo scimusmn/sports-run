@@ -10,12 +10,12 @@ function globalKeydown(key) {
     case 81:
 
       // 'Q' Lane 1 ready
-      OnBeamBreak('ln1_ready');
+      OnBeamBreak('ln1_start');
       break;
     case 65:
 
       // 'A' Lane 2 ready
-      OnBeamBreak('ln2_ready');
+      OnBeamBreak('ln2_start');
       break;
     case 80:
 

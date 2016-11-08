@@ -1,6 +1,5 @@
 export default class Constants {};
 
-
 // Time between sending signal
 // to start race, and race
 // actually starting.
@@ -16,6 +15,15 @@ Constants.STATE_IDLE = 0;
 Constants.STATE_PRE_RACE = 1;
 Constants.STATE_RACING = 2;
 Constants.STATE_POST_RACE = 3;
+
+Constants.DEFAULT_RACE_STATE = {raceState: Constants.STATE_IDLE,
+                                startTime:0,
+                                lane1Started:false,
+                                lane2Started:false,
+                                lane1FalseStart:false,
+                                lane2FalseStart:false,
+                                lane1FinishTime:0,
+                                lane2FinishTime:0, };
 
 // Freeze all definitions so
 // they cannot be changed.

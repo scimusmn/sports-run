@@ -43,7 +43,7 @@ export class Finish extends React.Component {
 
   renderLaneTime(laneNum) {
 
-    if (this.props.race['lane' + laneNum + 'Ready'] == true) {
+    if (this.props.race['lane' + laneNum + 'Started'] == true) {
 
       return (
         <LaneTimer laneTitle={'Lane ' + laneNum} falseStart={this.props.race['lane' + laneNum + 'FalseStart']} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
