@@ -4,6 +4,10 @@ settings-production.json
 npm-debug.log
 
 node_modules
+
+# TN - Work files
 work
+
+# TN - Large assets
 *.mov
 *.wav

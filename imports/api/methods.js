@@ -23,7 +23,7 @@ Meteor.methods({
 
     arenaControl(data);
 
-    return true;
+    return false;
 
   },
 
@@ -74,4 +74,5 @@ Meteor.methods({
   },
 
 });
+
 

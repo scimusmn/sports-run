@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import Constants from '../../modules/constants';
 import { Races } from '../../api/races';
 
@@ -51,7 +52,7 @@ export default {
 
     this.updateRaceState({lane1FinishTime:Date.now()});
 
-    if (lane2TimerRunning == false) {
+    if (lane2TimerRunning == false || Races.findOne().lane2Started == false) {
       this.postRaceSequence();
     } else {
       lane1TimerRunning = false;
@@ -68,7 +69,7 @@ export default {
 
     this.updateRaceState({lane2FinishTime:Date.now()});
 
-    if (lane1TimerRunning == false) {
+    if (lane1TimerRunning == false || Races.findOne().lane1Started == false) {
       this.postRaceSequence();
     } else {
       lane2TimerRunning = false;
@@ -97,6 +98,19 @@ export default {
     // Reset all attributes to default state
     lane1TimerRunning = false;
     lane2TimerRunning = false;
+
+    // Tell arena to go
+    // back to standby layer
+    Meteor.apply('arenaUpdate', [{
+      msg: 'idle',
+    },], {
+
+      onResultReceived: (error, response) => {
+        if (error) console.warn(error.reason);
+        if (response) console.log('arenaUpdate success:', response);
+      },
+
+    });
 
     this.updateRaceState(Constants.DEFAULT_RACE_STATE);
 
@@ -135,3 +149,4 @@ export default {
   },
 
 };
+

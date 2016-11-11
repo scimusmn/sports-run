@@ -26,16 +26,8 @@ setInitialState();
 
 function setInitialState() {
 
-  // Ensure all video and camera streams are initialized
-  // Set any initial settings that the project file doesn't store
-  sendOSC('/layer1/clip1/connect', 1);
-  sendOSC('/layer2/clip1/connect', 1);
-  sendOSC('/layer3/clip1/connect', 1);
-  sendOSC('/layer4/clip1/connect', 1);
-  sendOSC('/layer5/clip1/connect', 1);
-
   // Start on idle screen
-  toggleLayers([1], [2,3,4,5]);
+  toggleLayers([1], [2,3,4,5,6,7,8]);
 
 };
 
@@ -46,9 +38,10 @@ function setInitialState() {
  */
 function toggleLayers(shows, hides) {
 
-  // Show these layers
+  // Show and play these layers
   for (var i = 0; i < shows.length; i++) {
     sendOSC('/layer' + shows[i] + '/bypassed', 0);
+    sendOSC('/layer' + shows[i] + '/clip1/connect', 1);
   };
 
   // Hide these layers

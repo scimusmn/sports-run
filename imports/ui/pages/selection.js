@@ -47,13 +47,12 @@ export class Selection extends React.Component {
         <br/><br/>
         <p>Simulate beam break:</p>
         <Button id='ln1_start' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Start</Button>
-        =======>
         <Button id='ln1_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/>
         <Button id='ln2_start' bsStyle='success' onClick={ this.beamBreak }>Lane 2 Start</Button>
-        =======>
         <Button id='ln2_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
         <br/><br/>
+
       </Col>
     </Row>;
 
