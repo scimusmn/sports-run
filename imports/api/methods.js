@@ -75,4 +75,6 @@ Meteor.methods({
 
 });
 
-
+// Ensure race state start with defaults
+console.log('methods.js  - Defaulting race state');
+rm.resetForNextRace(Constants.DEFAULT_RACE_STATE);
