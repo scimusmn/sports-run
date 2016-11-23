@@ -6,6 +6,8 @@ let raceId;
 let lane1TimerRunning = false;
 let lane2TimerRunning = false;
 let raceTicker = {};
+let startTimeout = {};
+let raceTimeout = {};
 
 export default {
 
@@ -25,7 +27,42 @@ export default {
 
     this.updateRaceState({raceState: Constants.STATE_RACING});
 
+    // Catch instances of incomplete
+    // or unstarted races.
+    this.watchTimeouts();
+
     return startTime;
+
+  },
+
+  watchTimeouts() {
+
+    // Start timeout timer
+    // to watch for incomplete.
+    clearTimeout(startTimeout);
+    clearTimeout(raceTimeout);
+
+    startTimeout = Meteor.setTimeout(() => {
+
+      if (Races.findOne().lane1Started == true || Races.findOne().lane2Started == true) {
+
+        // Someone has started race.
+        // Wait for a finish
+        raceTimeout = Meteor.setTimeout(() => {
+
+          console.log('Timing out. Someone did not finish race. Forcing finish.');
+          this.lane1Finish();
+          this.lane2Finish();
+
+        }, Constants.RACE_TIMEOUT);
+
+      } else {
+
+        console.log('Timing out. No one started race.');
+        this.resetForNextRace();
+
+      }
+    }, Constants.START_LINE_TIMEOUT);
 
   },
 
@@ -84,6 +121,8 @@ export default {
     this.updateRaceState({raceState: Constants.STATE_POST_RACE});
 
     clearInterval(raceTicker);
+    clearTimeout(startTimeout);
+    clearTimeout(raceTimeout);
 
     Meteor.setTimeout(() => {
 
@@ -124,8 +163,10 @@ export default {
 
     Meteor.setTimeout(() => {
 
+      // Start race
       console.log('GO!');
-      this.updateRaceState({startTime: this.startTimer()});
+      const startTime = this.startTimer();
+      this.updateRaceState({startTime: startTime});
 
     }, Constants.PRE_RACE_DELAY);
 

@@ -1,0 +1,9 @@
+{
+  "public": {
+
+  },
+  "private": {
+    "arenaOscPort": "7770",
+    "arenaNetworkAddress": "localhost"
+  }
+}

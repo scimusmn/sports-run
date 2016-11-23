@@ -10,6 +10,16 @@ Constants.PRE_RACE_DELAY = 10000;
 // and race is actually restarting.
 Constants.POST_RACE_DELAY = 10000;
 
+// Time to wait before
+// a no-start reset.
+// (PRE_RACE_DELAY + 10sec timeout)
+Constants.START_LINE_TIMEOUT = 10000 + Constants.PRE_RACE_DELAY;
+
+// Time to wait before
+// a no-finish reset.
+// (20sec wait, following START_LINE_TIMEOUT)
+Constants.RACE_TIMEOUT = 20000;
+
 // Race state enumeration
 Constants.STATE_IDLE = 0;
 Constants.STATE_PRE_RACE = 1;

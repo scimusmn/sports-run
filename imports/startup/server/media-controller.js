@@ -7,7 +7,11 @@ import dgram from 'dgram';
 
 const udp = dgram.createSocket('udp4');
 
-const oscPort = 7770;
+const oscPort = Meteor.settings.private.arenaOscPort;
+if (!oscPort) console.log('WARNING - No OSC Port found in settings.json');
+
+const networkAddress = Meteor.settings.private.arenaNetworkAddress;
+if (!networkAddress) console.log('WARNING - No network address found in settings.json');
 
 function sendOSC(address, val) {
 
@@ -18,7 +22,7 @@ function sendOSC(address, val) {
     args: [val],
   });
 
-  return udp.send(buf, 0, buf.length, oscPort, 'localhost');
+  return udp.send(buf, 0, buf.length, oscPort, networkAddress);
 
 }
 
@@ -52,41 +56,84 @@ function toggleLayers(shows, hides) {
 };
 
 /**
+ * Fade Out
+ * Tell Arena to fade
+ * out entire composition.
+ * Note: For this to work,
+ * the Fade Out transform in
+ * Arena's composition must be
+ * set to timeline mode.
+ */
+let fadingOut = false;
+function fadeOut() {
+  if (fadingOut == false) {
+    sendOSC('/composition/video/fadeout/direction', 0);
+    fadingOut = true;
+  }
+}
+
+/**
+ * Fade In
+ * Tell Arena to fade
+ * in entire composition.
+ */
+function fadeIn() {
+  if (fadingOut == true) {
+    sendOSC('/composition/video/fadeout/direction', 1);
+    fadingOut = false;
+  }
+}
+
+/**
  * Arena Control
  * Transpose incoming control
  * messages into Arena actions
  */
+let fadeTimer = {};
 export function arenaControl(data) {
 
   console.log('arenaControl: ' + data.msg);
 
-  switch (data.msg) {
-    case 'idle': // Standby mode
-      toggleLayers([1], [2,3,4,5,6,7,8]);
-      break;
-    case 'race-press': // Soccer
-      toggleLayers([2], [1,3,4,5,6,7,8]);
-      break;
-    case 'race-wiggins': // Basketball
-      toggleLayers([3], [1,2,4,5,6,7,8]);
-      break;
-    case 'race-tc': // Mascot
-      toggleLayers([4], [1,2,3,5,6,7,8]);
-      break;
-    case 'race-haula': // Hockey
-      toggleLayers([5], [1,2,3,4,6,7,8]);
-      break;
-    case 'race-braun': // Racer
-      toggleLayers([6], [1,2,3,4,5,7,8]);
-      break;
-    case 'race-trex': // Dinosaur
-      toggleLayers([7], [1,2,3,4,5,6,8]);
-      break;
-    case 'race-thielen': // Football
-      toggleLayers([8], [1,2,3,4,5,6,7]);
-      break;
-    default:
-      console.log('arenaControl: data.msg ' + data.msg + ' not recognized');
-  }
+  // Fade out arena composition
+  // before showing new layer
+  fadeOut();
+
+  clearTimeout(fadeTimer);
+  fadeTimer = Meteor.setTimeout(() => {
+
+    switch (data.msg) {
+      case 'idle': // Standby mode
+        toggleLayers([1], [2,3,4,5,6,7,8]);
+        break;
+      case 'race-press': // Soccer
+        toggleLayers([2], [1,3,4,5,6,7,8]);
+        break;
+      case 'race-wiggins': // Basketball
+        toggleLayers([3], [1,2,4,5,6,7,8]);
+        break;
+      case 'race-tc': // Mascot
+        toggleLayers([4], [1,2,3,5,6,7,8]);
+        break;
+      case 'race-haula': // Hockey
+        toggleLayers([5], [1,2,3,4,6,7,8]);
+        break;
+      case 'race-braun': // Racer
+        toggleLayers([6], [1,2,3,4,5,7,8]);
+        break;
+      case 'race-trex': // Dinosaur
+        toggleLayers([7], [1,2,3,4,5,6,8]);
+        break;
+      case 'race-thielen': // Football
+        toggleLayers([8], [1,2,3,4,5,6,7]);
+        break;
+      default:
+        console.log('arenaControl: data.msg ' + data.msg + ' not recognized');
+    }
+
+    // Fade in arena composition
+    // now that layers are switched
+    fadeIn();
+
+  }, 500);
 
 }
