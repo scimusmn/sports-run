@@ -3,6 +3,8 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { OnBeamBreak } from '../../startup/client/beam-breaks';
 import { Loading } from '../components/loading';
+import { AbsoluteContainer } from '../components/AbsoluteContainer';
+import { AthleteInfo } from '../components/AthleteInfo';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
 import Constants from '../../modules/constants';
@@ -50,6 +52,30 @@ export class Selection extends React.Component {
         <Button id='race-braun' bsStyle='default' onClick={ this.selectionClick }>Braun</Button>
         <Button id='race-trex' bsStyle='default' onClick={ this.selectionClick }>T Rex</Button>
         <Button id='race-thielen' bsStyle='default' onClick={ this.selectionClick }>Thielen</Button>
+
+        <AbsoluteContainer lock={false} classParent='selection' reference='images/selection_ref.png'>
+
+          <h1>Who do <em>YOU</em> want to race?</h1>
+          <h2>¿Contra quién quieres competir?</h2>
+
+          <img src='images/tc.png' />
+          <img src='images/braun.png' />
+          <img src='images/haula.png' />
+          <img src='images/press.png' />
+          <img src='images/wiggins.png' />
+          <img src='images/trex.png' />
+          <img src='images/theilen.png' />
+
+          <AthleteInfo name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
+          <AthleteInfo name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
+          <AthleteInfo name='Erik Haula' team='Minnesota Wild' speed='9.74 mph'/>
+          <AthleteInfo name='Christen Press' team='U.S. Women"s National Soccer Team' speed='10.25 mph'/>
+          <AthleteInfo name='Candice Wiggins' team='Minnesota Lynx (retired)' speed='8.8 mph'/>
+          <AthleteInfo name='Tyrannosaurus Rex' team='Dinosaur' speed='9.88 mph'/>
+          <AthleteInfo name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
+
+        </AbsoluteContainer>
+
       </div>;
 
   }

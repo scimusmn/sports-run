@@ -1,12 +1,27 @@
 @import "base/extends";
 @import "base/animations";
 @import "base/forms";
-
+@import "base/fonts";
+@import "base/colors";
 @import "module/loading";
-@import "module/login";
-@import "module/signup";
 
-@import "state/navbar";
+
+body {
+  color: $sports-gray;
+  font-family: 'Avenir Next Condensed';
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 81px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 64px;
+  color: $sports-orange;
+}
+
 
 
 .faded-text {
@@ -19,3 +34,33 @@
   font-weight: 400;
   padding-left: 20px;
 }
+
+.athlete-info {
+
+  text-align: center;
+
+  h3 {
+    line-height: 8px;
+  }
+
+  .name {
+    color: $sports-gray;
+  }
+
+  .team {
+    color: $sports-orange;
+  }
+
+  .speed {
+    color: $sports-yellow;
+  }
+
+}
+
+
+
+
+
+
+
+.selection{.child_0{position:absolute;top:87px;left:223px;}.child_1{position:absolute;top:191px;left:117px;}.child_2{position:absolute;top:266px;left:195px;}.child_3{position:absolute;top:230px;left:599px;}.child_4{position:absolute;top:648px;left:155px;}.child_5{position:absolute;top:662px;left:585px;}.child_6{position:absolute;top:1088px;left:223px;}.child_7{position:absolute;top:1112px;left:613px;}.child_8{position:absolute;top:1478px;left:421px;}.child_9{position:absolute;top:173px;left:15px;}.child_10{position:absolute;top:173px;left:15px;}.child_11{position:absolute;top:173px;left:15px;}.child_12{position:absolute;top:173px;left:15px;}.child_13{position:absolute;top:173px;left:15px;}.child_14{position:absolute;top:695px;left:-31px;}.child_15{position:absolute;top:439px;left:-41px;}}
