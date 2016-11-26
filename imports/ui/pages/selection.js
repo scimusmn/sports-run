@@ -21,6 +21,8 @@ export class Selection extends React.Component {
 
     let selectionId = event.target.id;
 
+    console.log('selectionClick', selectionId);
+
     Meteor.apply('arenaUpdate', [{
       msg: selectionId,
     },], {
@@ -43,36 +45,31 @@ export class Selection extends React.Component {
 
   renderSelect() {
 
-    return <div>
-        <p>Start a race:</p>
-        <Button id='race-press' bsStyle='default' onClick={ this.selectionClick }>Press</Button>
-        <Button id='race-wiggins' bsStyle='default' onClick={ this.selectionClick }>Wiggins</Button>
-        <Button id='race-tc' bsStyle='default' onClick={ this.selectionClick }>TC</Button>
-        <Button id='race-haula' bsStyle='default' onClick={ this.selectionClick }>Haula</Button>
-        <Button id='race-braun' bsStyle='default' onClick={ this.selectionClick }>Braun</Button>
-        <Button id='race-trex' bsStyle='default' onClick={ this.selectionClick }>T Rex</Button>
-        <Button id='race-thielen' bsStyle='default' onClick={ this.selectionClick }>Thielen</Button>
+    return <div className='screen selection-screen'>
 
-        <AbsoluteContainer lock={false} classParent='selection' reference='images/selection_ref.png'>
+        <AbsoluteContainer lock={true} classParent='selection' reference='images/selection_ref.png'>
 
-          <h1>Who do <em>YOU</em> want to race?</h1>
-          <h2>¿Contra quién quieres competir?</h2>
+          <h1 ref='headline_en' >Who do <em>YOU</em> want to race?</h1>
+          <h2 ref='headline_es' >¿Contra quién quieres competir?</h2>
 
-          <img src='images/tc.png' />
-          <img src='images/braun.png' />
-          <img src='images/haula.png' />
-          <img src='images/press.png' />
-          <img src='images/wiggins.png' />
-          <img src='images/trex.png' />
-          <img src='images/theilen.png' />
+          <img id='race-press' ref='portrait_tc' src='images/tc.png' onClick={ this.selectionClick }/>
+          <img id='race-wiggins' ref='portrait_braun' src='images/braun.png' onClick={ this.selectionClick }/>
+          <img id='race-tc' ref='portrait_haula' src='images/haula.png' onClick={ this.selectionClick }/>
+          <img id='race-haula' ref='portrait_press' src='images/press.png' onClick={ this.selectionClick }/>
+          <img id='race-braun' ref='portrait_wiggins' src='images/wiggins.png' onClick={ this.selectionClick }/>
+          <img id='race-trex' ref='portrait_trex' src='images/trex.png' onClick={ this.selectionClick }/>
+          <img id='race-thielen' ref='portrait_theilen' src='images/theilen.png' onClick={ this.selectionClick }/>
 
-          <AthleteInfo name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
-          <AthleteInfo name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
-          <AthleteInfo name='Erik Haula' team='Minnesota Wild' speed='9.74 mph'/>
-          <AthleteInfo name='Christen Press' team='U.S. Women"s National Soccer Team' speed='10.25 mph'/>
-          <AthleteInfo name='Candice Wiggins' team='Minnesota Lynx (retired)' speed='8.8 mph'/>
-          <AthleteInfo name='Tyrannosaurus Rex' team='Dinosaur' speed='9.88 mph'/>
-          <AthleteInfo name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
+          <AthleteInfo ref='info_tc' name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
+          <AthleteInfo ref='info_braun' name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
+          <AthleteInfo ref='info_haula' name='Erik Haula' team='Minnesota Wild' speed='9.74 mph'/>
+          <AthleteInfo ref='info_press' name='Christen Press' team="U.S. Women's National Soccer Team" speed='10.25 mph'/>
+          <AthleteInfo ref='info_wiggins' name='Candice Wiggins' team='Minnesota Lynx (retired)' speed='8.8 mph'/>
+          <AthleteInfo ref='info_trex' name='Tyrannosaurus Rex' team='Dinosaur' speed='9.88 mph'/>
+          <AthleteInfo ref='info_theilen' name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
+
+          <img ref='O_drag' src='images/playbook_O.png' />
+          <img ref='O_static' src='images/playbook_O.png' />
 
         </AbsoluteContainer>
 
@@ -82,9 +79,9 @@ export class Selection extends React.Component {
 
   renderGetReady() {
 
-    return <div>
-        <h2>Go to the starting line.</h2>
-        <br/>
+    return <div className='centered'>
+        <h1>Go to the starting line</h1>
+        <h2>Ve a la linea de salida</h2>
         {this.renderBeamButtons()}
       </div>;
 
@@ -92,9 +89,9 @@ export class Selection extends React.Component {
 
   renderPleaseWait() {
 
-    return <div>
-        <h2>Please wait until race finishes.</h2>
-        <br/>
+    return <div className='centered'>
+        <h1>Please wait until<br/>race finishes</h1>
+        <h2>Por favor espera hasta que<br/>la carrera termine</h2>
         {this.renderBeamButtons()}
       </div>;
 
@@ -115,30 +112,24 @@ export class Selection extends React.Component {
 
   render() {
 
-    let rHtml = '';
+    let jsx = '';
 
     switch (this.props.race.raceState){
       case Constants.STATE_IDLE:
-        rHtml = this.renderSelect();
+        jsx = this.renderSelect();
         break;
       case Constants.STATE_PRE_RACE:
-        rHtml = this.renderGetReady();
+        jsx = this.renderGetReady();
         break;
       case Constants.STATE_RACING:
       case Constants.STATE_POST_RACE:
-        rHtml = this.renderPleaseWait();
+        jsx = this.renderPleaseWait();
         break;
     };
 
-    return <Row>
-      <Col xs={ 12 }>
-
-        <h4 className='page-header'>Selection Screen<span className='faded-text'> (Race state: {this.props.race.raceState})</span></h4>
-
-        {rHtml}
-
-      </Col>
-    </Row>;
+    return <div className='screen selection-screen'>
+              {jsx}
+          </div>;
 
   }
 }

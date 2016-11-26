@@ -27,16 +27,21 @@ export class AbsoluteContainer extends React.Component {
       var options = {
         setCursor: true,
         useGPU: false,
-        onDragEnd: function(el, x, y, event) {
-          console.log('onDragEnd', x, y);
-          console.log(el);
-        },
       };
 
       for (var i = 0; i < this.dragRefs.length; i++) {
         const ref = this.dragRefs[i];
         const element = ReactDOM.findDOMNode(this.refs[ref]);
+
+        const origTop = window.getComputedStyle(element).getPropertyValue('top');
+
         new Draggable(element, options);
+
+        // Hack to retain accurate top
+        // values for h1s,h2s, and h3s.
+        // after making draggable
+        element.style.top = origTop;
+
       }
 
     }
@@ -61,14 +66,22 @@ export class AbsoluteContainer extends React.Component {
         // already been assigned,
         // assign our own.
 
-        // let ref = child.ref;
-        // if (!ref) ref = 'child_' + index;
+        let ref = child.ref;
+        if (!ref) {
+          console.log('Absolute Container Warning - No ref id assigned to element', index, ' - skipping...');
+          return React.cloneElement(child, { key: index });
+        }
 
-        const ref = 'child_' + index;
-        console.log('in ', ref, '[');
+        let cName = child.props.className;
+
+        if (cName) {
+          cName = ref + ' ' + cName;
+        } else {
+          cName = ref;
+        }
 
         this.dragRefs.push(ref);
-        return React.cloneElement(child, { key:index, className:ref, ref: ref });
+        return React.cloneElement(child, { key: index, className: cName, ref: ref });
 
       }
     );
@@ -142,6 +155,12 @@ export class AbsoluteContainer extends React.Component {
       const clName = ref;
       const absTop = window.getComputedStyle(element).getPropertyValue('top');
       const absLeft = window.getComputedStyle(element).getPropertyValue('left');
+
+      console.log('========', clName);
+      console.log('bound ', element.getBoundingClientRect().top);
+      console.log('absTop', absTop);
+      console.log('style', element.style.top);
+      console.log('obj.offsetTop', element.offsetTop);
 
       let childStyle = '.' + clName + '{';
       childStyle += 'position:absolute;';

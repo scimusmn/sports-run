@@ -159,7 +159,8 @@ export default {
 
     // Wait for standard time
     console.log('initiateNewRace:', msg);
-    this.updateRaceState({raceState: Constants.STATE_PRE_RACE});
+    const athlete = msg.replace('race-', '');
+    this.updateRaceState({raceState: Constants.STATE_PRE_RACE, athlete:athlete});
 
     Meteor.setTimeout(() => {
 
