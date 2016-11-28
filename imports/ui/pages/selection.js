@@ -82,7 +82,6 @@ export class Selection extends React.Component {
     return <div className='centered'>
         <h1>Go to the starting line</h1>
         <h2>Ve a la linea de salida</h2>
-        {this.renderBeamButtons()}
       </div>;
 
   }
@@ -92,7 +91,6 @@ export class Selection extends React.Component {
     return <div className='centered'>
         <h1>Please wait until<br/>race finishes</h1>
         <h2>Por favor espera hasta que<br/>la carrera termine</h2>
-        {this.renderBeamButtons()}
       </div>;
 
   }

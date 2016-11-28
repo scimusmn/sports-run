@@ -44,15 +44,18 @@ export class Finish extends React.Component {
 
   renderHeader() {
 
-    let jsx = '';
-
+    let jsx = <div className='centered'>
+                <h1>&nbsp;</h1>
+                <h2>&nbsp;</h2>
+              </div>;
+/*
     if (this.props.race.raceState == Constants.STATE_POST_RACE) {
       jsx = <div className='centered'>
               <h1>How did you do? Check your time</h1>
               <h2>¿Cómo te fue? Revisa tu tiempo</h2>
             </div>;
     }
-
+*/
     return jsx;
 
   }
@@ -64,6 +67,7 @@ export class Finish extends React.Component {
     if (this.props.race.raceState == Constants.STATE_POST_RACE) {
 
       jsx = <div className='centered'>
+              <br/><br/>
               <h1>Thanks for racing! Please exit to your right</h1>
               <h2>¡Gracias por competir! Por favor salir por la derecha</h2>
             </div>;
@@ -75,7 +79,10 @@ export class Finish extends React.Component {
 
   renderAthleteTime() {
 
-    let jsx = '';
+    let jsx = <div className='centered'>
+                <h1>&nbsp;</h1>
+                <h2>&nbsp;</h2>
+              </div>;
 
     if (this.props.race.raceState == Constants.STATE_POST_RACE && this.props.race.athlete != '') {
 
@@ -115,15 +122,20 @@ export class Finish extends React.Component {
             <Row>
               <Col xs={ 12 }>
 
+                { this.renderHeader() }
+
                 <Row>
 
-                  <Col xs={ 4 }>
+                  <Col xs={ 4 } xsOffset={4}>
                     <TransitionGroup>
                       { this.renderAthleteTime() }
                     </TransitionGroup>
                   </Col>
 
-                  <Col xs={ 4 }>
+                </Row>
+
+                <Row>
+                  <Col xs={ 4 } xsOffset={2}>
                     <TransitionGroup>
                       { this.renderLaneTime(1) }
                     </TransitionGroup>
@@ -137,7 +149,6 @@ export class Finish extends React.Component {
 
                 </Row>
 
-                { this.renderHeader() }
                 { this.renderFooter() }
 
               </Col>
