@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Draggable from 'Draggable';
+// import Draggable from 'Draggable';
 import { Button } from 'react-bootstrap';
 
 export class AbsoluteContainer extends React.Component {
@@ -19,7 +19,7 @@ export class AbsoluteContainer extends React.Component {
     // DOM is rendered and
     // ready for manipulation
     // and animations.
-
+/*
     // If in edit mode, make all elements draggable
     if (this.props.lock == false) {
 
@@ -45,7 +45,7 @@ export class AbsoluteContainer extends React.Component {
       }
 
     }
-
+*/
   }
 
   componentWillUnmount() {
