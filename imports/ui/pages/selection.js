@@ -52,13 +52,13 @@ export class Selection extends React.Component {
           <h1 ref='headline_en' >Who do <em>YOU</em> want to race?</h1>
           <h2 ref='headline_es' >¿Contra quién quieres competir?</h2>
 
-          <img id='race-press' ref='portrait_tc' src='images/tc.png' onClick={ this.selectionClick }/>
-          <img id='race-wiggins' ref='portrait_braun' src='images/braun.png' onClick={ this.selectionClick }/>
-          <img id='race-tc' ref='portrait_haula' src='images/haula.png' onClick={ this.selectionClick }/>
-          <img id='race-haula' ref='portrait_press' src='images/press.png' onClick={ this.selectionClick }/>
-          <img id='race-braun' ref='portrait_wiggins' src='images/wiggins.png' onClick={ this.selectionClick }/>
+          <img id='race-tc' ref='portrait_tc' src='images/tc.png' onClick={ this.selectionClick }/>
+          <img id='race-braun' ref='portrait_braun' src='images/braun.png' onClick={ this.selectionClick }/>
+          <img id='race-haula' ref='portrait_haula' src='images/haula.png' onClick={ this.selectionClick }/>
+          <img id='race-press' ref='portrait_press' src='images/press.png' onClick={ this.selectionClick }/>
+          <img id='race-wiggins' ref='portrait_wiggins' src='images/wiggins.png' onClick={ this.selectionClick }/>
           <img id='race-trex' ref='portrait_trex' src='images/trex.png' onClick={ this.selectionClick }/>
-          <img id='race-thielen' ref='portrait_theilen' src='images/theilen.png' onClick={ this.selectionClick }/>
+          <img id='race-theilen' ref='portrait_theilen' src='images/theilen.png' onClick={ this.selectionClick }/>
 
           <AthleteInfo ref='info_tc' name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
           <AthleteInfo ref='info_braun' name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
