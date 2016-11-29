@@ -58,7 +58,7 @@ export class Selection extends React.Component {
           <img id='race-press' ref='portrait_press' src='images/press.png' onClick={ this.selectionClick }/>
           <img id='race-wiggins' ref='portrait_wiggins' src='images/wiggins.png' onClick={ this.selectionClick }/>
           <img id='race-trex' ref='portrait_trex' src='images/trex.png' onClick={ this.selectionClick }/>
-          <img id='race-theilen' ref='portrait_theilen' src='images/theilen.png' onClick={ this.selectionClick }/>
+          <img id='race-thielen' ref='portrait_theilen' src='images/theilen.png' onClick={ this.selectionClick }/>
 
           <AthleteInfo ref='info_tc' name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
           <AthleteInfo ref='info_braun' name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
@@ -66,7 +66,7 @@ export class Selection extends React.Component {
           <AthleteInfo ref='info_press' name='Christen Press' team="U.S. Women's National Soccer Team" speed='10.25 mph'/>
           <AthleteInfo ref='info_wiggins' name='Candice Wiggins' team='Minnesota Lynx (retired)' speed='8.8 mph'/>
           <AthleteInfo ref='info_trex' name='Tyrannosaurus Rex' team='Dinosaur' speed='9.88 mph'/>
-          <AthleteInfo ref='info_theilen' name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
+          <AthleteInfo ref='info_thielen' name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
 
           <img ref='O_drag' src='images/playbook_O.png' />
           <img ref='O_static' src='images/playbook_O.png' />
