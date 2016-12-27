@@ -3,12 +3,12 @@ export default class Constants {};
 // Time between sending signal
 // to start race, and race
 // actually starting.
-Constants.PRE_RACE_DELAY = 10000;
+Constants.PRE_RACE_DELAY = 15000;
 
 // Time after sending signal
 // that lane has finished,
-// and race is actually restarting.
-Constants.POST_RACE_DELAY = 10000;
+// and race state restarting.
+Constants.POST_RACE_DELAY = 7500;
 
 // Time to wait before
 // a no-start reset.
@@ -47,6 +47,7 @@ Constants.DISPLAY_NAMES = { press:'Christen Press',
                           };
 
 Constants.DEFAULT_RACE_STATE = {raceState: Constants.STATE_IDLE,
+                                preRaceTime:0,
                                 startTime:0,
                                 athlete:'',
                                 lane1Started:false,

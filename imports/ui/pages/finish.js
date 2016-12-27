@@ -77,6 +77,40 @@ export class Finish extends React.Component {
 
   }
 
+  renderCountdown() {
+
+    let jsx = '';
+
+    if (this.props.race.raceState == Constants.STATE_PRE_RACE && !this.props.race.lane1Started && !this.props.race.lane2Started) {
+
+      const timeUntilGo = Constants.PRE_RACE_DELAY - this.props.race.preRaceTime;
+      let displaySecs = '';
+      if (timeUntilGo <= 3000 && timeUntilGo > 0) {
+        displaySecs = '3';
+        if (timeUntilGo <= 2000) {
+          displaySecs = '2';
+          if (timeUntilGo <= 1000) {
+            displaySecs = '1';
+          }
+        }
+      }
+
+      jsx = <div className='countdown'>
+              <h1>{displaySecs}</h1>
+            </div>;
+
+    } else if (this.props.race.raceState == Constants.STATE_RACING && !this.props.race.lane1Started && !this.props.race.lane2Started) {
+
+      jsx = <div className='countdown go'>
+              <h1>GO!</h1>
+              <h2>¡Ya!</h2>
+            </div>;
+    }
+
+    return jsx;
+
+  }
+
   renderAthleteTime() {
 
     let jsx = <div className='centered'>
@@ -123,6 +157,7 @@ export class Finish extends React.Component {
               <Col xs={ 12 }>
 
                 { this.renderHeader() }
+                { this.renderCountdown() }
 
                 <Row>
 
@@ -153,7 +188,6 @@ export class Finish extends React.Component {
 
               </Col>
             </Row>
-            <h4><span className='faded-text'>(Race state: {this.props.race.raceState})</span></h4>
           </div>;
 
   }

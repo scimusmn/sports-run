@@ -91,6 +91,26 @@ img {
   font-size: 0.7em;
 }
 
+.finish-screen .countdown {
+  text-align: center;
+}
+
+.finish-screen .lane-timer h1 {
+  font-size: 110px;
+}
+
+.finish-screen .countdown h1 {
+  font-size: 620px;
+}
+
+.finish-screen .countdown h2 {
+  font-size: 230px;
+}
+
+.finish-screen .countdown.go h1 {
+  font-size: 380px;
+}
+
 .faded-text {
   opacity:0.6;
 }

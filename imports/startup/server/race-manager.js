@@ -8,6 +8,7 @@ let lane2TimerRunning = false;
 let raceTicker = {};
 let startTimeout = {};
 let raceTimeout = {};
+let raceInitTime = 0;
 
 export default {
 
@@ -160,8 +161,13 @@ export default {
     // Wait for standard time
     console.log('initiateNewRace:', msg);
     const athlete = msg.replace('race-', '');
+
     this.updateRaceState({raceState: Constants.STATE_PRE_RACE, athlete:athlete});
 
+    this.raceInitTime = Date.now();
+    this.preRaceTick();
+
+    // Pre race delay
     Meteor.setTimeout(() => {
 
       // Start race
@@ -170,6 +176,24 @@ export default {
       this.updateRaceState({startTime: startTime});
 
     }, Constants.PRE_RACE_DELAY);
+
+  },
+
+  preRaceTick() {
+
+    // Update countdown
+    // during prerace state.
+    const preRaceTime = Date.now() - this.raceInitTime;
+    this.updateRaceState({preRaceTime:preRaceTime});
+
+    // Pre race delay
+    Meteor.setTimeout(() => {
+
+      if (this.isState(Constants.STATE_PRE_RACE)) {
+        this.preRaceTick();
+      }
+
+    }, 250);
 
   },
 
