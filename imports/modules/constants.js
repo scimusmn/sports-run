@@ -3,7 +3,7 @@ export default class Constants {};
 // Time between sending signal
 // to start race, and race
 // actually starting.
-Constants.PRE_RACE_DELAY = 15000;
+Constants.PRE_RACE_DELAY = 15540;
 
 // Delay after final racer
 // has crossed finish,
