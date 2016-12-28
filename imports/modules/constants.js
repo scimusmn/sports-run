@@ -5,20 +5,19 @@ export default class Constants {};
 // actually starting.
 Constants.PRE_RACE_DELAY = 15000;
 
-// Time after sending signal
-// that lane has finished,
-// and race state restarting.
-Constants.POST_RACE_DELAY = 7500;
+// Delay after final racer
+// has crossed finish,
+// until race restarts.
+Constants.POST_RACE_DELAY = 5000;
 
 // Time to wait before
 // a no-start reset.
-// (PRE_RACE_DELAY + 10sec timeout)
-Constants.START_LINE_TIMEOUT = 10000 + Constants.PRE_RACE_DELAY;
+// (PRE_RACE_DELAY + 5sec timeout)
+Constants.START_LINE_TIMEOUT = 7500 + Constants.PRE_RACE_DELAY;
 
 // Time to wait before
 // a no-finish reset.
-// (20sec wait, following START_LINE_TIMEOUT)
-Constants.RACE_TIMEOUT = 20000;
+Constants.RACE_TIMEOUT = 10000;
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
@@ -27,13 +26,13 @@ Constants.STATE_RACING = 2;
 Constants.STATE_POST_RACE = 3;
 
 // Athlete time lookup
-Constants.TIMES = { press:'00:00:05:25',
-                    wiggins:'00:00:07:09',
-                    tc:'00:00:08:55',
-                    haula:'00:00:05:95',
-                    braun:'00:00:07:25',
-                    trex:'00:00:04:55',
-                    thielen:'00:00:06:15',
+Constants.TIMES = { press:'2.28',
+                    wiggins:'2.34',
+                    tc:'3.75',
+                    haula:'2.18',
+                    braun:'1.86',
+                    trex:'1.96',
+                    thielen:'1.99',
                   };
 
 // Athlete display name lookup

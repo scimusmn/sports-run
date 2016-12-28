@@ -81,7 +81,7 @@ export class Finish extends React.Component {
 
     let jsx = '';
 
-    if (this.props.race.raceState == Constants.STATE_PRE_RACE && !this.props.race.lane1Started && !this.props.race.lane2Started) {
+    if (this.props.race.raceState == Constants.STATE_PRE_RACE) {
 
       const timeUntilGo = Constants.PRE_RACE_DELAY - this.props.race.preRaceTime;
       let displaySecs = '';
@@ -96,7 +96,7 @@ export class Finish extends React.Component {
       }
 
       jsx = <div className='countdown'>
-              <h1>{displaySecs}</h1>
+              <h1>&nbsp;{displaySecs}&nbsp;</h1>
             </div>;
 
     } else if (this.props.race.raceState == Constants.STATE_RACING && !this.props.race.lane1Started && !this.props.race.lane2Started) {

@@ -45,13 +45,14 @@ export default {
 
     startTimeout = Meteor.setTimeout(() => {
 
+      // Check if anyone has started the race.
       if (Races.findOne().lane1Started == true || Races.findOne().lane2Started == true) {
 
         // Someone has started race.
         // Wait for a finish
         raceTimeout = Meteor.setTimeout(() => {
 
-          console.log('Timing out. Someone did not finish race. Forcing finish.');
+          console.log('Timimg out. Someone did not finish race. Forcing finish.');
           this.lane1Finish();
           this.lane2Finish();
 
@@ -59,10 +60,12 @@ export default {
 
       } else {
 
-        console.log('Timing out. No one started race.');
+        // No one has started race.
+        console.log('Timing out. No one started the race.');
         this.resetForNextRace();
 
       }
+
     }, Constants.START_LINE_TIMEOUT);
 
   },
