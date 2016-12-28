@@ -13,11 +13,12 @@ Constants.POST_RACE_DELAY = 5000;
 // Time to wait before
 // a no-start reset.
 // (PRE_RACE_DELAY + 5sec timeout)
-Constants.START_LINE_TIMEOUT = 7500 + Constants.PRE_RACE_DELAY;
+Constants.START_LINE_TIMEOUT = 10000 + Constants.PRE_RACE_DELAY;
 
 // Time to wait before
 // a no-finish reset.
-Constants.RACE_TIMEOUT = 10000;
+// (starts after START_LINE_TIMEOUT)
+Constants.RACE_TIMEOUT = 1000;
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
