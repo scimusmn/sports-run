@@ -33,7 +33,15 @@ export class Finish extends React.Component {
   }
 
   renderHeader() {
-    let jsx = '';
+    // TEMP - spacer until we're positive
+    // we aren't using header. -tn
+    let jsx = <div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    </div>;
+
     /*
         let jsx = <div className='centered header'>
                     <h1> </h1>
@@ -54,7 +62,7 @@ export class Finish extends React.Component {
   renderFooter() {
 
     let jsx = '';
-
+/*
     if (this.props.race.raceState == Constants.STATE_POST_RACE) {
 
       jsx = <div className='centered footer'>
@@ -62,7 +70,7 @@ export class Finish extends React.Component {
               <h2>¡Gracias por competir! Por favor salir por la derecha</h2>
             </div>;
     }
-
+*/
     return jsx;
 
   }
