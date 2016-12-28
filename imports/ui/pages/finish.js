@@ -24,21 +24,11 @@ export class Finish extends React.Component {
     s = s - this.props.race.startTime;
     if (s < 0) s = 0;
 
-    function padZ(n) {
-      return (n < 10 ? '0' : '') + n;
-    }
+    // Convert to seconds
+    const secs = s / 1000.0;
 
-    let ms = s % 1000;
-    s = (s - ms) / 1000;
-    let secs = s % 60;
-    s = (s - secs) / 60;
-    var mins = s % 60;
-    var hrs = (s - mins) / 60;
-
-    ms = ms.toString();
-    if (ms.length > 2) ms = ms.substr(0, 2);
-
-    return padZ(hrs) + ':' + padZ(mins) + ':' + padZ(secs) + ':' + padZ(ms);
+    // Trim to two decimal points
+    return secs.toFixed(2);
 
   }
 
