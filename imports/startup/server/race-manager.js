@@ -196,7 +196,7 @@ export default {
         this.preRaceTick();
       }
 
-    }, 250);
+    }, 100);
 
   },
 

@@ -96,19 +96,38 @@ img {
 }
 
 .finish-screen .lane-timer h1 {
-  font-size: 110px;
+  font-size: 210px;
+  color: $sports-orange;
+  text-align: center;
+  width: 100%;
+}
+
+.finish-screen .lane-timer h2 {
+  font-size: 90px;
+  color: $sports-gray;
+  text-align: center;
+  width: 100%;
+}
+
+.finish-screen .countdown h1,
+.finish-screen .countdown h2 {
+  position: absolute;
+  width: 100%;
 }
 
 .finish-screen .countdown h1 {
-  font-size: 620px;
-}
-
-.finish-screen .countdown h2 {
-  font-size: 230px;
+  font-size: 1100px;
+  top: -50px;
 }
 
 .finish-screen .countdown.go h1 {
-  font-size: 380px;
+  font-size: 580px;
+  top: 10px;
+}
+
+.finish-screen .countdown.go h2 {
+  font-size: 400px;
+  top: 550px;
 }
 
 .faded-text {

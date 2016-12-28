@@ -33,18 +33,19 @@ export class Finish extends React.Component {
   }
 
   renderHeader() {
+    let jsx = '';
+    /*
+        let jsx = <div className='centered header'>
+                    <h1> </h1>
+                    <h2> </h2>
+                  </div>;
 
-    let jsx = <div className='centered'>
-                <h1>&nbsp;</h1>
-                <h2>&nbsp;</h2>
-              </div>;
-/*
-    if (this.props.race.raceState == Constants.STATE_POST_RACE) {
-      jsx = <div className='centered'>
-              <h1>How did you do? Check your time</h1>
-              <h2>¿Cómo te fue? Revisa tu tiempo</h2>
-            </div>;
-    }
+        if (this.props.race.raceState == Constants.STATE_POST_RACE) {
+          jsx = <div className='centered header'>
+                  <h1>How did you do? Check your time</h1>
+                  <h2>¿Cómo te fue? Revisa tu tiempo</h2>
+                </div>;
+        }
 */
     return jsx;
 
@@ -56,8 +57,7 @@ export class Finish extends React.Component {
 
     if (this.props.race.raceState == Constants.STATE_POST_RACE) {
 
-      jsx = <div className='centered'>
-              <br/><br/>
+      jsx = <div className='centered footer'>
               <h1>Thanks for racing! Please exit to your right</h1>
               <h2>¡Gracias por competir! Por favor salir por la derecha</h2>
             </div>;
@@ -86,7 +86,7 @@ export class Finish extends React.Component {
       }
 
       jsx = <div className='countdown'>
-              <h1>&nbsp;{displaySecs}&nbsp;</h1>
+              <h1> {displaySecs} </h1>
             </div>;
 
     } else if (this.props.race.raceState == Constants.STATE_RACING && !this.props.race.lane1Started && !this.props.race.lane2Started) {
@@ -104,8 +104,8 @@ export class Finish extends React.Component {
   renderAthleteTime() {
 
     let jsx = <div className='centered'>
-                <h1>&nbsp;</h1>
-                <h2>&nbsp;</h2>
+                <h1> </h1>
+                <h2> </h2>
               </div>;
 
     if (this.props.race.raceState == Constants.STATE_POST_RACE && this.props.race.athlete != '') {
@@ -128,7 +128,7 @@ export class Finish extends React.Component {
 
     let jsx = '';
 
-    if (this.props.race['lane' + laneNum + 'Started'] == true) {
+    if (this.props.race.raceState != Constants.STATE_PRE_RACE && this.props.race['lane' + laneNum + 'Started'] == true) {
 
       jsx = (
         <LaneTimer laneTitle={'Lane ' + laneNum} falseStart={this.props.race['lane' + laneNum + 'FalseStart']} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
@@ -152,24 +152,18 @@ export class Finish extends React.Component {
                 <Row>
 
                   <Col xs={ 4 } xsOffset={4}>
-                    <TransitionGroup>
                       { this.renderAthleteTime() }
-                    </TransitionGroup>
                   </Col>
 
                 </Row>
 
                 <Row>
                   <Col xs={ 4 } xsOffset={2}>
-                    <TransitionGroup>
                       { this.renderLaneTime(1) }
-                    </TransitionGroup>
                   </Col>
 
                   <Col xs={ 4 }>
-                    <TransitionGroup>
                       { this.renderLaneTime(2) }
-                    </TransitionGroup>
                   </Col>
 
                 </Row>
