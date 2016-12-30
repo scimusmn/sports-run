@@ -27,13 +27,13 @@ Constants.STATE_RACING = 2;
 Constants.STATE_POST_RACE = 3;
 
 // Athlete time lookup
-Constants.TIMES = { press:'2.28',
-                    wiggins:'2.34',
-                    tc:'3.75',
-                    haula:'2.18',
-                    braun:'1.86',
-                    trex:'1.96',
-                    thielen:'1.99',
+Constants.TIMES = { press:'2.26',
+                    wiggins:'2.6',
+                    tc:'3.82',
+                    haula:'2.43',
+                    braun:'1.98',
+                    trex:'2.04',
+                    thielen:'2.11',
                   };
 
 // Athlete display name lookup
