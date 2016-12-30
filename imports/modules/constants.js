@@ -8,17 +8,17 @@ Constants.PRE_RACE_DELAY = 15540;
 // Delay after final racer
 // has crossed finish,
 // until race restarts.
-Constants.POST_RACE_DELAY = 5000;
+Constants.POST_RACE_DELAY = 7500;
 
 // Time to wait before
 // a no-start reset.
-// (PRE_RACE_DELAY + 5sec timeout)
-Constants.START_LINE_TIMEOUT = 10000 + Constants.PRE_RACE_DELAY;
+// (starts after PRE_RACE_DELAY)
+Constants.START_LINE_TIMEOUT = 10000;
 
 // Time to wait before
 // a no-finish reset.
 // (starts after START_LINE_TIMEOUT)
-Constants.RACE_TIMEOUT = 1000;
+Constants.RACE_TIMEOUT = 7500;
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
