@@ -91,12 +91,18 @@ export default {
     if (lane1TimerRunning == false) return false;
     lane1TimerRunning = false;
 
+    // Post final lane time
     this.updateRaceState({lane1FinishTime:Date.now()});
 
+    // End race if not waiting on other lane.
     if (lane2TimerRunning == false || Races.findOne().lane2Started == false) {
       this.postRaceSequence();
-    } else {
-      lane1TimerRunning = false;
+    }
+
+    // Catch racer that crosses
+    // lanes mid-race if solo.
+    if (Races.findOne().lane2Started == true && Races.findOne().lane1Started == false) {
+      this.lane2Finish();
     }
 
     return true;
@@ -108,12 +114,18 @@ export default {
     if (lane2TimerRunning == false) return false;
     lane2TimerRunning = false;
 
+    // Post final lane time
     this.updateRaceState({lane2FinishTime:Date.now()});
 
+    // End race if not waiting on other lane.
     if (lane1TimerRunning == false || Races.findOne().lane1Started == false) {
       this.postRaceSequence();
-    } else {
-      lane2TimerRunning = false;
+    }
+
+    // Catch racer that crosses
+    // lanes mid-race if solo.
+    if (Races.findOne().lane1Started == true && Races.findOne().lane2Started == false) {
+      this.lane1Finish();
     }
 
     return true;
