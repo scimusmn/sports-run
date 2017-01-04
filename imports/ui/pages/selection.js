@@ -5,6 +5,7 @@ import { OnBeamBreak } from '../../startup/client/beam-breaks';
 import { Loading } from '../components/loading';
 import { AbsoluteContainer } from '../components/AbsoluteContainer';
 import { AthleteInfo } from '../components/AthleteInfo';
+import SubtleAlert from '../components/SubtleAlert';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
 import Constants from '../../modules/constants';
@@ -95,16 +96,17 @@ export class Selection extends React.Component {
 
   }
 
-  renderBeamButtons() {
+  renderAlerts() {
 
-    return <div>
-        <p>Simulate beam break:</p>
-        <Button id='ln1_start' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Start</Button>
-        <Button id='ln1_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
-        <br/>
-        <Button id='ln2_start' bsStyle='success' onClick={ this.beamBreak }>Lane 2 Start</Button>
-        <Button id='ln2_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
-      </div>;
+    let jsx = '';
+    const msg = Session.get('subtleAlertMessage');
+    if (msg && msg != '') {
+      jsx = <div>
+            <SubtleAlert message={msg}></SubtleAlert>
+          </div>;
+    }
+
+    return jsx;
 
   }
 
@@ -126,7 +128,8 @@ export class Selection extends React.Component {
     };
 
     return <div className='screen selection-screen'>
-              {jsx}
+              { jsx }
+              { this.renderAlerts() }
           </div>;
 
   }

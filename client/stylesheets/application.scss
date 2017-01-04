@@ -166,6 +166,16 @@ img {
 
 }
 
+.subtle-alert {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  text-align: right;
+  font-size: 10px;
+  background-color: $sports-yellow;
+  color: $sports-orange;
+}
+
 .selection {
     .headline_en {
         position: absolute;
