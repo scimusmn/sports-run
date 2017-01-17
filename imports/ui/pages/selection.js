@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
-import { OnBeamBreak } from '../../startup/client/beam-breaks';
 import { Loading } from '../components/loading';
 import { AbsoluteContainer } from '../components/AbsoluteContainer';
 import { AthleteInfo } from '../components/AthleteInfo';
@@ -34,13 +33,6 @@ export class Selection extends React.Component {
       },
 
     });
-
-  }
-
-  beamBreak(event) {
-
-    let msg = event.target.id;
-    OnBeamBreak(msg);
 
   }
 
