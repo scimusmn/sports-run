@@ -54,11 +54,19 @@ export function OnBeamBreak(msg) {
 }
 
 /*
- * Watchdogs for keys being held down.
+ * Watchdog for extended key-repeats
  */
 
+// Object used for counting
+// keystrokes of any key.
 let keyLocks = {};
+
+// Number of keystrokes before
+// considered a 'locked' key.
 const strokeLimit = 30;
+
+// Interval between checking
+// for 'locked' keys.
 const limitSecs = 30;
 
 function lockCheck(key) {
@@ -94,7 +102,7 @@ function resetLockTimeouts() {
 
 }
 
-// Start watching
+// Start watchdogging
 setInterval(() => {
   resetLockTimeouts();
 }, limitSecs * 1000);
