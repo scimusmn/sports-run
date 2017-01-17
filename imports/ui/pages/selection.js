@@ -4,10 +4,11 @@ import { Meteor } from 'meteor/meteor';
 import { Loading } from '../components/loading';
 import { AbsoluteContainer } from '../components/AbsoluteContainer';
 import { AthleteInfo } from '../components/AthleteInfo';
-import SubtleAlert from '../components/SubtleAlert';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
+
 import Constants from '../../modules/constants';
+import SubtleAlert from '../components/SubtleAlert';
 
 export class Selection extends React.Component {
 

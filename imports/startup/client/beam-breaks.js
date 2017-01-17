@@ -45,7 +45,6 @@ export function OnBeamBreak(msg) {
 
     onResultReceived: (error, response) => {
       if (error) console.warn(error.reason);
-
       // if (response) console.log('beamBreak success:', response);
 
     },
@@ -59,7 +58,7 @@ export function OnBeamBreak(msg) {
  */
 
 let keyLocks = {};
-const strokeLimit = 20;
+const strokeLimit = 30;
 const limitSecs = 30;
 
 function lockCheck(key) {
@@ -75,21 +74,20 @@ function lockCheck(key) {
 
 function resetLockTimeouts() {
 
-  let keyLocked = '';
+  let keysLocked = '';
   for (var key in keyLocks) {
 
     if (!keyLocks.hasOwnProperty(key)) continue;
 
     if (keyLocks[key] > strokeLimit) {
 
-      keyLocked = key;
-      break;
+      keysLocked += key;
 
     }
 
   }
 
-  Session.set('subtleAlertMessage', keyLocked);
+  Session.set('subtleAlertMessage', keysLocked);
 
   // Reset key counts
   keyLocks = {};
