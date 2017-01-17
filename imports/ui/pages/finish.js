@@ -32,49 +32,6 @@ export class Finish extends React.Component {
 
   }
 
-  renderHeader() {
-    // TEMP - spacer until we're positive
-    // we aren't using header. -tn
-    let jsx = <div>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    </div>;
-
-    /*
-        let jsx = <div className='centered header'>
-                    <h1> </h1>
-                    <h2> </h2>
-                  </div>;
-
-        if (this.props.race.raceState == Constants.STATE_POST_RACE) {
-          jsx = <div className='centered header'>
-                  <h1>How did you do? Check your time</h1>
-                  <h2>¿Cómo te fue? Revisa tu tiempo</h2>
-                </div>;
-        }
-*/
-    return jsx;
-
-  }
-
-  renderFooter() {
-
-    let jsx = '';
-/*
-    if (this.props.race.raceState == Constants.STATE_POST_RACE) {
-
-      jsx = <div className='centered footer'>
-              <h1>Thanks for racing! Please exit to your right</h1>
-              <h2>¡Gracias por competir! Por favor salir por la derecha</h2>
-            </div>;
-    }
-*/
-    return jsx;
-
-  }
-
   renderCountdown() {
 
     let jsx = '';
@@ -111,7 +68,7 @@ export class Finish extends React.Component {
 
   renderAthleteTime() {
 
-    let jsx = <div className='centered'>
+    let jsx = <div>
                 <h1> </h1>
                 <h2> </h2>
               </div>;
@@ -154,29 +111,27 @@ export class Finish extends React.Component {
             <Row>
               <Col xs={ 12 }>
 
-                { this.renderHeader() }
                 { this.renderCountdown() }
 
-                <Row>
+                <Row className='athlete-time'>
 
                   <Col xs={ 4 } xsOffset={4}>
-                      { this.renderAthleteTime() }
+                    { this.renderAthleteTime() }
                   </Col>
 
                 </Row>
 
                 <Row>
+
                   <Col xs={ 4 } xsOffset={2}>
-                      { this.renderLaneTime(1) }
+                    { this.renderLaneTime(1) }
                   </Col>
 
                   <Col xs={ 4 }>
-                      { this.renderLaneTime(2) }
+                    { this.renderLaneTime(2) }
                   </Col>
 
                 </Row>
-
-                { this.renderFooter() }
 
               </Col>
             </Row>
