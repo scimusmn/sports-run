@@ -20,11 +20,17 @@ Constants.START_LINE_TIMEOUT = 10000;
 // (starts after START_LINE_TIMEOUT)
 Constants.RACE_TIMEOUT = 7500;
 
+// Time of inactivity
+// before triggering
+// attract loop state.
+Constants.ATTRACT_DELAY = 15000;
+
 // Race state enumeration
 Constants.STATE_IDLE = 0;
 Constants.STATE_PRE_RACE = 1;
 Constants.STATE_RACING = 2;
 Constants.STATE_POST_RACE = 3;
+Constants.STATE_ATTRACT_LOOP = 4;
 
 // Athlete time lookup
 Constants.TIMES = { press:'2.26',
