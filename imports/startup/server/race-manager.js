@@ -8,6 +8,7 @@ let lane2TimerRunning = false;
 let raceTicker = {};
 let startTimeout = {};
 let raceTimeout = {};
+let inactivityTimeout = {};
 let raceInitTime = 0;
 
 export default {
@@ -185,8 +186,7 @@ export default {
     // Pre race delay
     Meteor.setTimeout(() => {
 
-      // Start race
-      console.log('GO!');
+      // Go! Start race
       const startTime = this.startTimer();
       this.updateRaceState({startTime: startTime});
 
@@ -209,6 +209,28 @@ export default {
       }
 
     }, 100);
+
+  },
+
+  resetInactivity() {
+
+    console.log('resetInactivity');
+
+    Meteor.clearTimeout(inactivityTimeout);
+
+    if (this.isState(Constants.STATE_ATTRACT_LOOP)) {
+      // Reset to default state.
+      this.updateRaceState(Constants.DEFAULT_RACE_STATE);
+    }
+
+    inactivityTimeout = Meteor.setTimeout(() => {
+
+      // Inactivity timeout completed.
+      // Show attract loop.
+      this.updateRaceState(Constants.DEFAULT_RACE_STATE);
+      this.updateRaceState({raceState: Constants.STATE_ATTRACT_LOOP});
+
+    }, Constants.ATTRACT_DELAY);
 
   },
 

@@ -21,6 +21,10 @@ Meteor.methods({
       }
     }
 
+    // Any Arena event
+    // resets inactivity.
+    rm.resetInactivity();
+
     arenaControl(data);
 
     return false;

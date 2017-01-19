@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Loading } from '../components/loading';
 import { AbsoluteContainer } from '../components/AbsoluteContainer';
 import { AthleteInfo } from '../components/AthleteInfo';
+import { AttractLoop } from '../components/AttractLoop';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
 
@@ -16,16 +17,30 @@ export class Selection extends React.Component {
 
     super(props);
 
+    this.selectionClick = this.selectionClick.bind(this);
+    this.attractClick = this.attractClick.bind(this);
+
   }
 
   selectionClick(event) {
 
-    let selectionId = event.target.id;
+    const selectionId = event.target.id;
+    this.arenaControl(selectionId);
 
-    console.log('selectionClick', selectionId);
+  }
+
+  attractClick(event) {
+
+    this.arenaControl('attract');
+
+  }
+
+  arenaControl(msg) {
 
     Meteor.apply('arenaUpdate', [{
-      msg: selectionId,
+
+      msg: msg,
+
     },], {
 
       onResultReceived: (error, response) => {
@@ -103,6 +118,14 @@ export class Selection extends React.Component {
 
   }
 
+  renderAttract() {
+
+    return <div onClick={this.attractClick}>
+        <AttractLoop en='Touch the screen to start' es='Toca la pantalla para comenzar'></AttractLoop>
+      </div>;
+
+  }
+
   render() {
 
     let jsx = '';
@@ -117,6 +140,9 @@ export class Selection extends React.Component {
       case Constants.STATE_RACING:
       case Constants.STATE_POST_RACE:
         jsx = this.renderPleaseWait();
+        break;
+      case Constants.STATE_ATTRACT_LOOP:
+        jsx = this.renderAttract();
         break;
     };
 
