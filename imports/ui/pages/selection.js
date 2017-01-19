@@ -121,7 +121,7 @@ export class Selection extends React.Component {
   renderAttract() {
 
     return <div onClick={this.attractClick}>
-        <AttractLoop></AttractLoop>
+        <AttractLoop en='Touch the screen to start' es='Toca la pantalla para comenzar'></AttractLoop>
       </div>;
 
   }

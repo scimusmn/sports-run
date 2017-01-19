@@ -21,7 +21,6 @@ export class AttractLoop extends React.Component {
     // ready for manipulation
     // and animations.
     console.log('AttractLoop - componentDidMount');
-    console.log('this.tl',this.tl);
 
     this.tl.from(this.refs.bg, 0.5, {left:-500, autoAlpha:0.0,});
     this.tl.from(this.refs.en, 0.5, {x:-500, autoAlpha:0.0}, '-=0.4');
@@ -31,6 +30,7 @@ export class AttractLoop extends React.Component {
     this.tl.to(this.refs.en, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
     this.tl.to(this.refs.es, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
 
+    // Rotate dashed ring
     this.tl.to(this.refs.bg, 6.5, {rotation: 220, ease:Power2.easeOut}, 0.01);
 
     // Subtle hinty movement
@@ -38,7 +38,8 @@ export class AttractLoop extends React.Component {
     this.tl.to(this.refs.O_static, 3.14, {x:-8, y:5, rotation: 2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.1);
     this.tl.to(this.refs.O_drag, 3.14, {x:5, y:-8, rotation: -2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.2);
 
-    this.tl.add()
+    this.tl.from(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, 0.0);
+    this.tl.to(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, '-=0.5');
 
     this.tl.play();
 
@@ -59,11 +60,14 @@ export class AttractLoop extends React.Component {
   render() {
 
     return <div className='attract-loop centered'>
-      <h1 ref='en'>Touch the screen to start</h1>
-      <h2 ref='es'>Toca la pantalla para comenzar</h2>
-      <div ref='bg' className='bg'></div>
+
       <img ref='O_drag' className='O_drag' src='images/playbook_O.png' />
       <img ref='O_static' className='O_static' src='images/playbook_O.png' />
+      <div ref='fader' className='fader'></div>
+      <div ref='bg' className='bg'></div>
+      <h1 ref='en'>{this.props.en}</h1>
+      <h2 ref='es'>{this.props.es}</h2>
+
     </div>;
 
   }

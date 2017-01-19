@@ -6,6 +6,7 @@ import { Loading } from '../components/loading';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
 import { LaneTimer } from '../components/LaneTimer';
+import { AttractLoop } from '../components/AttractLoop';
 import Constants from '../../modules/constants';
 import TransitionGroup from 'react-addons-transition-group';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -105,10 +106,28 @@ export class Finish extends React.Component {
 
   }
 
+  renderAttract() {
+
+    let jsx = '';
+
+    if (this.props.race.raceState == Constants.STATE_ATTRACT_LOOP) {
+
+      jsx = <AttractLoop en='Want to race?' es='¿Quieres competir?'></AttractLoop>;
+
+    }
+
+    return jsx;
+
+  }
+
   render() {
 
     return <div className='screen finish-screen'>
+
+            { this.renderAttract() }
+
             <Row>
+
               <Col xs={ 12 }>
 
                 { this.renderCountdown() }
@@ -134,7 +153,9 @@ export class Finish extends React.Component {
                 </Row>
 
               </Col>
+
             </Row>
+
           </div>;
 
   }
