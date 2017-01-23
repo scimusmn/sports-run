@@ -16,7 +16,7 @@ body {
   user-select: none;
 
   /* hide cursor */
-  cursor: none !important;
+  /*cursor: none !important;*/
 
 }
 
@@ -192,6 +192,21 @@ img {
         position: absolute;
         top: 1538px;
         left: 21px;
+    }
+    .O_drag_egg {
+        position: absolute;
+        top: 605px;
+        left: 860px;
+    }
+    .O_static_egg {
+        position: absolute;
+        top: 1538px;
+        left: 21px;
+
+        -webkit-mask: url('images/playbook_O_mask.png');
+        -webkit-mask-position: 0px 0px;
+        -webkit-mask-repeat: no-repeat;
+
     }
 }
 

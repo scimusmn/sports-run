@@ -20,7 +20,6 @@ export class AttractLoop extends React.Component {
     // DOM is rendered and
     // ready for manipulation
     // and animations.
-    console.log('AttractLoop - componentDidMount');
 
     this.tl.from(this.refs.bg, 0.5, {left:-500, autoAlpha:0.0,});
     this.tl.from(this.refs.en, 0.5, {x:-500, autoAlpha:0.0}, '-=0.4');
@@ -49,8 +48,7 @@ export class AttractLoop extends React.Component {
 
     // DOM is about to become
     // inaccessible. Clean up
-    // all timers ans tweens.
-    console.log('AttractLoop - componentWillUnmount');
+    // all timers and tweens.
 
     this.tl.stop();
     this.tl.clear();

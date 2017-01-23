@@ -11,6 +11,9 @@ import { Races } from '../../api/races.js';
 import Constants from '../../modules/constants';
 import SubtleAlert from '../components/SubtleAlert';
 
+import TweenMax from 'gsap';
+import Draggable from '../../../node_modules/gsap/src/uncompressed/utils/Draggable.js';
+
 export class Selection extends React.Component {
 
   constructor(props) {
@@ -19,6 +22,33 @@ export class Selection extends React.Component {
 
     this.selectionClick = this.selectionClick.bind(this);
     this.attractClick = this.attractClick.bind(this);
+
+  }
+
+  componentDidMount() {
+
+    // DOM is rendered and
+    // ready for manipulation
+    // and animations.
+    this.setupEgg();
+
+  }
+
+  componentWillUnmount() {
+
+    // DOM is about to become
+    // inaccessible. Clean up
+    // all timers ans tweens.
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    // If on selection screen
+    // init the easter egg.
+    if (this.props.race.raceState == Constants.STATE_IDLE) {
+      this.setupEgg();
+    }
 
   }
 
@@ -32,6 +62,90 @@ export class Selection extends React.Component {
   attractClick(event) {
 
     this.arenaControl('attract');
+
+  }
+
+  setupEgg() {
+
+    console.log('setupEgg', this.eggDraggable);
+
+    // Destroy any current
+    // incarnation of the egg.
+    if (this.eggDraggable) {
+      if (this.eggDraggable[0]) this.eggDraggable[0].kill();
+      this.eggDraggable = {};
+    }
+
+    const _this = this;
+    this.eggDraggable = Draggable.create('#drag-egg', {type:'x,y', edgeResistance:0.65, throwProps:true,
+
+      onDrag:function() {
+
+        // Update the mask position
+        // on the static egg to align
+        // with the dragged 'O'
+        _this.updateEggPos(this.x, this.y);
+
+      }, onDragEnd:function() {
+
+        console.log('drag ended');
+
+        if (_this.updateEggPos(this.x, this.y) < 80) {
+          console.log('winner');
+
+          TweenMax.to('#drag-egg', 0.25, { x: -839, y:933, onUpdate:_this.updateEggPos, onUpdateParams:[this.x,this.y] });
+
+          _this.updateEggPos(-839, 933);
+
+          // Happy animation
+          TweenMax.fromTo('#drag-egg', 0.2,
+            { scale: 0.9,},
+            { scale: 1.2, ease:Power2.easeInOut, repeat: 9, yoyo: true });
+
+        } else {
+
+          // TweenMax.set('#drag-egg', { x: 0, y:0 });
+          // _this.updateEggPos(0, 0);
+
+          TweenMax.to('#drag-egg', 1.0, { x: 0, y:0 });
+
+        }
+
+      },
+
+    });
+
+    // Reset position of mask
+    // and draggable
+    this.updateEggPos(0, 0);
+
+  }
+
+  updateEggPos(offsetX, offsetY) {
+
+    // Original pos + drag
+    let mX = parseInt(offsetX) + 860;
+    let mY = parseInt(offsetY) + 605;
+
+    // Difference between static
+    // and dragged 'O'.
+    mX = mX - 21;
+    mY = mY - 1538;
+
+    const maskPos = mX + 'px '  + mY + 'px';
+    TweenMax.set('#static-egg', { webkitMaskPosition: maskPos });
+
+    // Offset sum
+    const offsetSum = Math.abs(mX) + Math.abs(mY);
+    return offsetSum;
+
+  }
+
+  disableEgg() {
+
+    if (!this.eggDraggable) return;
+    this.eggDraggable[0].kill();
+    this.eggDraggable = {};
 
   }
 
@@ -72,13 +186,15 @@ export class Selection extends React.Component {
           <AthleteInfo ref='info_tc' name='TC Bear' team='Minnesota Twins' speed='6.1 mph'/>
           <AthleteInfo ref='info_braun' name='Mark Braun' team='U.S. Paralympics' speed='10.78 mph'/>
           <AthleteInfo ref='info_haula' name='Erik Haula' team='Minnesota Wild' speed='9.74 mph'/>
-          <AthleteInfo ref='info_press' name='Christen Press' team="U.S. Women's National Soccer Team" speed='10.25 mph'/>
+          <AthleteInfo ref='info_press' name='Christen Press' team='U.S. Women&#39;s National Soccer Team' speed='10.25 mph'/>
           <AthleteInfo ref='info_wiggins' name='Candice Wiggins' team='Minnesota Lynx (retired)' speed='8.8 mph'/>
           <AthleteInfo ref='info_trex' name='Tyrannosaurus Rex' team='Dinosaur' speed='9.88 mph'/>
           <AthleteInfo ref='info_thielen' name='Adam Thielen' team='Minnesota Vikings' speed='9.88 mph'/>
 
-          <img ref='O_drag' src='images/playbook_O.png' />
+          <img ref='O_drag'  id='drag-egg' src='images/playbook_O.png' />
           <img ref='O_static' src='images/playbook_O.png' />
+
+          <img ref='O_static_egg' id='static-egg' src='images/playbook_O_egg.png' />
 
         </AbsoluteContainer>
 
