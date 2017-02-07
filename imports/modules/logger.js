@@ -16,12 +16,11 @@
  *
  * Timestamps are appended by default.
  *
- * Your log files can be found at:
- * <project-root>/.meteor/local/build/programs/server/logs/log-<date-created>.log
+ * Your log files will be found at:
+ *    /usr/local/var/log/<project-name>/
  *
  */
 
-const logDirectory = 'logs';
 let logger;
 
 if(Meteor.isServer) {
@@ -34,9 +33,19 @@ if(Meteor.isServer) {
   winston.setLevels(winston.config.npm.levels);
   winston.addColors(winston.config.npm.colors);
 
+  const folders = process.env.PWD.split('/');
+  const projectId = folders[folders.length - 1];
+  const logDirectory = '/usr/local/var/log';
+  const projectDirectory = logDirectory + '/' + projectId;
+
+  // Create log directory if it does not exist
   if (fs.existsSync(logDirectory) == false) {
-    // Create the directory if it does not exist
     fs.mkdirSync(logDirectory);
+  }
+
+  // Create project directory if it does not exist
+  if (fs.existsSync(projectDirectory) == false) {
+    fs.mkdirSync(projectDirectory);
   }
 
   /*
@@ -46,7 +55,7 @@ if(Meteor.isServer) {
   logger = new(winston.Logger)({
     transports: [
       new winston.transports.File({
-        filename: logDirectory + '/log-'+(new Date().toISOString())+'.log',
+        filename: projectDirectory + '/LOG-' + (new Date().toISOString()) + '.log',
         maxsize: 1024 * 1024 * 10, // 10MB
       }),
       ],
@@ -54,8 +63,8 @@ if(Meteor.isServer) {
   });
 
   /*
-   * Add ability to call
-   * log methods from client.
+   * Expose winston log
+   * methods to client.
    */
   Meteor.methods({
 
@@ -81,8 +90,8 @@ if(Meteor.isServer) {
 }
 
 /*
- * Call logger functions
- * from client side
+ * Attach client-side methods
+ * to exposed meteor methods.
  */
 if(Meteor.isClient) {
 
