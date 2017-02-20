@@ -16,12 +16,24 @@
  *
  * Timestamps are appended by default.
  *
+ * Ensure the following directory exists,
+ * and allows user write privelges:
+ *    /usr/local/var/log
+ *
  * Your log files will be found at:
- *    /usr/local/var/log/<project-name>/
+ *    /usr/local/var/log/<project-name>/smm-log-<Timestamp>.log
  *
  */
 
-let logger;
+// Default ghost logger, to be overwritten.
+let logger = {
+
+  debug: function () {},
+  info: function () {},
+  warn: function () {},
+  error: function () {},
+
+};
 
 if(Meteor.isServer) {
 
@@ -35,32 +47,41 @@ if(Meteor.isServer) {
 
   const folders = process.env.PWD.split('/');
   const projectId = folders[folders.length - 1];
-  const logDirectory = '/usr/local/var/log';
-  const projectDirectory = logDirectory + '/' + projectId;
+  const rootLogDirectory = '/usr/local/var/log/';
+  const logDirectory = rootLogDirectory + projectId;
 
-  // Create log directory if it does not exist
-  if (fs.existsSync(logDirectory) == false) {
-    fs.mkdirSync(logDirectory);
+  try {
+
+    // Check for read/write access to directory
+    fs.accessSync(rootLogDirectory, fs.R_OK | fs.W_OK);
+
+    // Create directory if it does not exist
+    if (fs.existsSync(logDirectory) == false) {
+      fs.mkdirSync(logDirectory);
+    }
+
+    /*
+     * We have access to write logs,
+     * so create logger instance
+     * with local file transport.
+     */
+    logger = new(winston.Logger)({
+      transports: [
+        new winston.transports.File({
+          filename: logDirectory + '/smm-log-' + (new Date().toISOString()) + '.log',
+          maxsize: 1024 * 1024 * 10, // 10MB
+        }),
+        ],
+      exitOnError: false, // Do not exit logger if error is encountered
+    });
+
+
+  } catch (err) {
+
+    console.log('WARNING: Directory "' + rootLogDirectory + '" not accessible for file-logging. Disabling logger.js.');
+    console.error(err);
+
   }
-
-  // Create project directory if it does not exist
-  if (fs.existsSync(projectDirectory) == false) {
-    fs.mkdirSync(projectDirectory);
-  }
-
-  /*
-   * Create logger instance
-   * with local file transport.
-   */
-  logger = new(winston.Logger)({
-    transports: [
-      new winston.transports.File({
-        filename: projectDirectory + '/LOG-' + (new Date().toISOString()) + '.log',
-        maxsize: 1024 * 1024 * 10, // 10MB
-      }),
-      ],
-    exitOnError: false, // Do not exit logger if error is encountered
-  });
 
   /*
    * Expose winston log
