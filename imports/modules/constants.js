@@ -34,7 +34,7 @@ Constants.STATE_ATTRACT_LOOP = 4;
 
 // Athlete time lookup
 Constants.TIMES = { press:'2.26',
-                    wiggins:'2.6',
+                    wiggins:'2.60',
                     tc:'3.82',
                     haula:'2.43',
                     braun:'1.98',
