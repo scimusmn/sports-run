@@ -11,6 +11,8 @@ export class AttractLoop extends React.Component {
 
     super(props);
 
+    this.tl = null;
+
   }
 
   createTimelineAnimation() {
@@ -49,9 +51,9 @@ export class AttractLoop extends React.Component {
     // DOM is rendered and
     // ready for manipulation
     // and animations.
-    console.log('AttractLoop - componentDidMount');
+    // console.log('AttractLoop - componentDidMount');
 
-    if (!this.tl) {
+    if (this.tl == null) {
       this.createTimelineAnimation();
     }
 
@@ -66,7 +68,11 @@ export class AttractLoop extends React.Component {
     // all timers ans tweens.
     console.log('AttractLoop - componentWillUnmount');
 
-    this.tl.stop();
+    // Kills the timeline and forces to completion
+    this.tl.kill();
+
+    // Set to null so the reference is garbage collected
+    this.tl = null;
 
   }
 
