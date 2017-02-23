@@ -11,7 +11,36 @@ export class AttractLoop extends React.Component {
 
     super(props);
 
+  }
+
+  createTimelineAnimation() {
+
+    // Init
     this.tl = new TimelineMax({repeat:-1, delay:1});
+
+    // Transition in
+    this.tl.from(this.refs.bg, 0.5, {left:-500, autoAlpha:0.0,});
+    this.tl.from(this.refs.en, 0.5, {x:-500, autoAlpha:0.0}, '-=0.4');
+    this.tl.from(this.refs.es, 0.5, {x:-500, autoAlpha:0.0}, '-=0.8');
+
+    // Transition out
+    this.tl.to(this.refs.bg, 0.5, {left:500, autoAlpha:0.0, ease: Power2.easeIn, }, '+=18');
+    this.tl.to(this.refs.en, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
+    this.tl.to(this.refs.es, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
+
+    // Rotate dashed ring in
+    this.tl.to(this.refs.bg, 9.5, {rotation: 220, ease:Power2.easeOut}, 0.01);
+
+    // Rotate dashed ring out
+    this.tl.to(this.refs.bg, 3.5, {rotation: 570, ease:Power2.easeIn}, '-=2.725');
+
+    // Subtle hint movement
+    // for Os easter egg
+    // this.tl.to(this.refs.O_static, 3.14, {x:-8, y:5, rotation: 2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.1);
+    // this.tl.to(this.refs.O_drag, 3.14, {x:5, y:-8, rotation: -2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.2);
+
+    this.tl.from(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, 0.0);
+    this.tl.to(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, '-=0.5');
 
   }
 
@@ -22,24 +51,9 @@ export class AttractLoop extends React.Component {
     // and animations.
     console.log('AttractLoop - componentDidMount');
 
-    this.tl.from(this.refs.bg, 0.5, {left:-500, autoAlpha:0.0,});
-    this.tl.from(this.refs.en, 0.5, {x:-500, autoAlpha:0.0}, '-=0.4');
-    this.tl.from(this.refs.es, 0.5, {x:-500, autoAlpha:0.0}, '-=0.8');
-
-    this.tl.to(this.refs.bg, 0.5, {left:500, autoAlpha:0.0, ease: Power2.easeIn, }, '+=5.0');
-    this.tl.to(this.refs.en, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
-    this.tl.to(this.refs.es, 0.5, {x:500, autoAlpha:0.0, ease: Power2.easeIn}, '-=0.4');
-
-    // Rotate dashed ring
-    this.tl.to(this.refs.bg, 6.5, {rotation: 220, ease:Power2.easeOut}, 0.01);
-
-    // Subtle hinty movement
-    // for Os easter egg
-    this.tl.to(this.refs.O_static, 3.14, {x:-8, y:5, rotation: 2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.1);
-    this.tl.to(this.refs.O_drag, 3.14, {x:5, y:-8, rotation: -2, ease: Power2.easeInOut, yoyo:true, repeat:1}, 0.2);
-
-    this.tl.from(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, 0.0);
-    this.tl.to(this.refs.fader, 0.5, { backgroundColor: 'rgba(0,0,0,1.0)' }, '-=0.5');
+    if (!this.tl) {
+      this.createTimelineAnimation();
+    }
 
     this.tl.play();
 
@@ -53,7 +67,6 @@ export class AttractLoop extends React.Component {
     console.log('AttractLoop - componentWillUnmount');
 
     this.tl.stop();
-    this.tl.clear();
 
   }
 

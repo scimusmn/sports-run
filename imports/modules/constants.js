@@ -23,7 +23,7 @@ Constants.RACE_TIMEOUT = 7500;
 // Time of inactivity
 // before triggering
 // attract loop state.
-Constants.ATTRACT_DELAY = 90000; // 90000
+Constants.ATTRACT_DELAY = 120000; // 120000
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
