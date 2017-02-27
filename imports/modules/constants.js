@@ -23,7 +23,7 @@ Constants.RACE_TIMEOUT = 7500;
 // Time of inactivity
 // before triggering
 // attract loop state.
-Constants.ATTRACT_DELAY = 90000; // 90000
+Constants.ATTRACT_DELAY = 120000; // 120000
 
 // Race state enumeration
 Constants.STATE_IDLE = 0;
@@ -34,7 +34,7 @@ Constants.STATE_ATTRACT_LOOP = 4;
 
 // Athlete time lookup
 Constants.TIMES = { press:'2.26',
-                    wiggins:'2.6',
+                    wiggins:'2.60',
                     tc:'3.82',
                     haula:'2.43',
                     braun:'1.98',

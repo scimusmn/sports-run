@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import Constants from '../../modules/constants';
 import { Races } from '../../api/races';
+import logger from '../../modules/logger';
 
 let raceId;
 let lane1TimerRunning = false;
@@ -141,6 +142,19 @@ export default {
     clearTimeout(startTimeout);
     clearTimeout(raceTimeout);
 
+    // Log for analytics
+    const race = Races.findOne();
+    logger.info({message:'race-completed',
+                  athlete:race.athlete,
+                  lane1Started:race.lane1Started,
+                  lane2Started:race.lane2Started,
+                  lane1FalseStart:race.lane1FalseStart,
+                  lane2FalseStart:race.lane2FalseStart,
+                  lane1Result:race.lane1FinishTime - race.startTime,
+                  lane2Result:race.lane2FinishTime - race.startTime,
+               }
+     );
+
     Meteor.setTimeout(() => {
 
       this.resetForNextRace();
@@ -183,6 +197,9 @@ export default {
     this.raceInitTime = Date.now();
     this.preRaceTick();
 
+    // Log for analytics
+    logger.info({message:'race-initiated', athlete:athlete});
+
     // Pre race delay
     Meteor.setTimeout(() => {
 
@@ -214,8 +231,6 @@ export default {
 
   resetInactivity() {
 
-    console.log('resetInactivity');
-
     Meteor.clearTimeout(inactivityTimeout);
 
     if (this.isState(Constants.STATE_ATTRACT_LOOP)) {
@@ -227,8 +242,12 @@ export default {
 
       // Inactivity timeout completed.
       // Show attract loop.
+
       this.updateRaceState(Constants.DEFAULT_RACE_STATE);
       this.updateRaceState({raceState: Constants.STATE_ATTRACT_LOOP});
+
+      // Log for analytics
+      logger.info({message:'inactivity-timeout', inactivityTime:Constants.ATTRACT_DELAY});
 
     }, Constants.ATTRACT_DELAY);
 
