@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import Constants from '../../modules/constants';
 import { Races } from '../../api/races';
+import logger from '../../modules/logger';
 
 let raceId;
 let lane1TimerRunning = false;
@@ -8,6 +9,8 @@ let lane2TimerRunning = false;
 let raceTicker = {};
 let startTimeout = {};
 let raceTimeout = {};
+let inactivityTimeout = {};
+let raceInitTime = 0;
 
 export default {
 
@@ -44,13 +47,14 @@ export default {
 
     startTimeout = Meteor.setTimeout(() => {
 
+      // Check if anyone has started the race.
       if (Races.findOne().lane1Started == true || Races.findOne().lane2Started == true) {
 
         // Someone has started race.
         // Wait for a finish
         raceTimeout = Meteor.setTimeout(() => {
 
-          console.log('Timing out. Someone did not finish race. Forcing finish.');
+          console.log('Timimg out. Someone did not finish race. Forcing finish.');
           this.lane1Finish();
           this.lane2Finish();
 
@@ -58,10 +62,12 @@ export default {
 
       } else {
 
-        console.log('Timing out. No one started race.');
+        // No one has started race.
+        console.log('Timing out. No one started the race.');
         this.resetForNextRace();
 
       }
+
     }, Constants.START_LINE_TIMEOUT);
 
   },
@@ -87,12 +93,18 @@ export default {
     if (lane1TimerRunning == false) return false;
     lane1TimerRunning = false;
 
+    // Post final lane time
     this.updateRaceState({lane1FinishTime:Date.now()});
 
+    // End race if not waiting on other lane.
     if (lane2TimerRunning == false || Races.findOne().lane2Started == false) {
       this.postRaceSequence();
-    } else {
-      lane1TimerRunning = false;
+    }
+
+    // Catch racer that crosses
+    // lanes mid-race if solo.
+    if (Races.findOne().lane2Started == true && Races.findOne().lane1Started == false) {
+      this.lane2Finish();
     }
 
     return true;
@@ -104,12 +116,18 @@ export default {
     if (lane2TimerRunning == false) return false;
     lane2TimerRunning = false;
 
+    // Post final lane time
     this.updateRaceState({lane2FinishTime:Date.now()});
 
+    // End race if not waiting on other lane.
     if (lane1TimerRunning == false || Races.findOne().lane1Started == false) {
       this.postRaceSequence();
-    } else {
-      lane2TimerRunning = false;
+    }
+
+    // Catch racer that crosses
+    // lanes mid-race if solo.
+    if (Races.findOne().lane1Started == true && Races.findOne().lane2Started == false) {
+      this.lane1Finish();
     }
 
     return true;
@@ -123,6 +141,19 @@ export default {
     clearInterval(raceTicker);
     clearTimeout(startTimeout);
     clearTimeout(raceTimeout);
+
+    // Log for analytics
+    const race = Races.findOne();
+    logger.info({message:'race-completed',
+                  athlete:race.athlete,
+                  lane1Started:race.lane1Started,
+                  lane2Started:race.lane2Started,
+                  lane1FalseStart:race.lane1FalseStart,
+                  lane2FalseStart:race.lane2FalseStart,
+                  lane1Result:race.lane1FinishTime - race.startTime,
+                  lane2Result:race.lane2FinishTime - race.startTime,
+               }
+     );
 
     Meteor.setTimeout(() => {
 
@@ -160,16 +191,65 @@ export default {
     // Wait for standard time
     console.log('initiateNewRace:', msg);
     const athlete = msg.replace('race-', '');
+
     this.updateRaceState({raceState: Constants.STATE_PRE_RACE, athlete:athlete});
 
+    this.raceInitTime = Date.now();
+    this.preRaceTick();
+
+    // Log for analytics
+    logger.info({message:'race-initiated', athlete:athlete});
+
+    // Pre race delay
     Meteor.setTimeout(() => {
 
-      // Start race
-      console.log('GO!');
+      // Go! Start race
       const startTime = this.startTimer();
       this.updateRaceState({startTime: startTime});
 
     }, Constants.PRE_RACE_DELAY);
+
+  },
+
+  preRaceTick() {
+
+    // Update countdown
+    // during prerace state.
+    const preRaceTime = Date.now() - this.raceInitTime;
+    this.updateRaceState({preRaceTime:preRaceTime});
+
+    // Pre race delay
+    Meteor.setTimeout(() => {
+
+      if (this.isState(Constants.STATE_PRE_RACE)) {
+        this.preRaceTick();
+      }
+
+    }, 100);
+
+  },
+
+  resetInactivity() {
+
+    Meteor.clearTimeout(inactivityTimeout);
+
+    if (this.isState(Constants.STATE_ATTRACT_LOOP)) {
+      // Reset to default state.
+      this.updateRaceState(Constants.DEFAULT_RACE_STATE);
+    }
+
+    inactivityTimeout = Meteor.setTimeout(() => {
+
+      // Inactivity timeout completed.
+      // Show attract loop.
+
+      this.updateRaceState(Constants.DEFAULT_RACE_STATE);
+      this.updateRaceState({raceState: Constants.STATE_ATTRACT_LOOP});
+
+      // Log for analytics
+      logger.info({message:'inactivity-timeout', inactivityTime:Constants.ATTRACT_DELAY});
+
+    }, Constants.ATTRACT_DELAY);
 
   },
 

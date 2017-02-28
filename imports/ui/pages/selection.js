@@ -1,13 +1,15 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
-import { OnBeamBreak } from '../../startup/client/beam-breaks';
 import { Loading } from '../components/loading';
 import { AbsoluteContainer } from '../components/AbsoluteContainer';
 import { AthleteInfo } from '../components/AthleteInfo';
+import { AttractLoop } from '../components/AttractLoop';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
+
 import Constants from '../../modules/constants';
+import SubtleAlert from '../components/SubtleAlert';
 
 export class Selection extends React.Component {
 
@@ -15,16 +17,30 @@ export class Selection extends React.Component {
 
     super(props);
 
+    this.selectionClick = this.selectionClick.bind(this);
+    this.attractClick = this.attractClick.bind(this);
+
   }
 
   selectionClick(event) {
 
-    let selectionId = event.target.id;
+    const selectionId = event.target.id;
+    this.arenaControl(selectionId);
 
-    console.log('selectionClick', selectionId);
+  }
+
+  attractClick(event) {
+
+    this.arenaControl('attract');
+
+  }
+
+  arenaControl(msg) {
 
     Meteor.apply('arenaUpdate', [{
-      msg: selectionId,
+
+      msg: msg,
+
     },], {
 
       onResultReceived: (error, response) => {
@@ -33,13 +49,6 @@ export class Selection extends React.Component {
       },
 
     });
-
-  }
-
-  beamBreak(event) {
-
-    let msg = event.target.id;
-    OnBeamBreak(msg);
 
   }
 
@@ -95,15 +104,24 @@ export class Selection extends React.Component {
 
   }
 
-  renderBeamButtons() {
+  renderAlerts() {
 
-    return <div>
-        <p>Simulate beam break:</p>
-        <Button id='ln1_start' bsStyle='success' onClick={ this.beamBreak }>Lane 1 Start</Button>
-        <Button id='ln1_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
-        <br/>
-        <Button id='ln2_start' bsStyle='success' onClick={ this.beamBreak }>Lane 2 Start</Button>
-        <Button id='ln2_finish' bsStyle='danger' onClick={ this.beamBreak }>Finish</Button>
+    let jsx = '';
+    const msg = Session.get('subtleAlertMessage');
+    if (msg && msg != '') {
+      jsx = <div>
+            <SubtleAlert message={msg}></SubtleAlert>
+          </div>;
+    }
+
+    return jsx;
+
+  }
+
+  renderAttract() {
+
+    return <div onClick={this.attractClick}>
+        <AttractLoop en='Touch the screen to start' es='Toca la pantalla para comenzar'></AttractLoop>
       </div>;
 
   }
@@ -123,10 +141,14 @@ export class Selection extends React.Component {
       case Constants.STATE_POST_RACE:
         jsx = this.renderPleaseWait();
         break;
+      case Constants.STATE_ATTRACT_LOOP:
+        jsx = this.renderAttract();
+        break;
     };
 
     return <div className='screen selection-screen'>
-              {jsx}
+              { jsx }
+              { this.renderAlerts() }
           </div>;
 
   }

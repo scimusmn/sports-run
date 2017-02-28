@@ -6,6 +6,7 @@ import { Loading } from '../components/loading';
 import { composeWithTracker } from 'react-komposer';
 import { Races } from '../../api/races.js';
 import { LaneTimer } from '../components/LaneTimer';
+import { AttractLoop } from '../components/AttractLoop';
 import Constants from '../../modules/constants';
 import TransitionGroup from 'react-addons-transition-group';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -24,52 +25,41 @@ export class Finish extends React.Component {
     s = s - this.props.race.startTime;
     if (s < 0) s = 0;
 
-    function padZ(n) {
-      return (n < 10 ? '0' : '') + n;
-    }
+    // Convert to seconds
+    const secs = s / 1000.0;
 
-    let ms = s % 1000;
-    s = (s - ms) / 1000;
-    let secs = s % 60;
-    s = (s - secs) / 60;
-    var mins = s % 60;
-    var hrs = (s - mins) / 60;
-
-    ms = ms.toString();
-    if (ms.length > 2) ms = ms.substr(0, 2);
-
-    return padZ(hrs) + ':' + padZ(mins) + ':' + padZ(secs) + ':' + padZ(ms);
+    // Trim to two decimal points
+    return secs.toFixed(2);
 
   }
 
-  renderHeader() {
-
-    let jsx = <div className='centered'>
-                <h1>&nbsp;</h1>
-                <h2>&nbsp;</h2>
-              </div>;
-/*
-    if (this.props.race.raceState == Constants.STATE_POST_RACE) {
-      jsx = <div className='centered'>
-              <h1>How did you do? Check your time</h1>
-              <h2>¿Cómo te fue? Revisa tu tiempo</h2>
-            </div>;
-    }
-*/
-    return jsx;
-
-  }
-
-  renderFooter() {
+  renderCountdown() {
 
     let jsx = '';
 
-    if (this.props.race.raceState == Constants.STATE_POST_RACE) {
+    if (this.props.race.raceState == Constants.STATE_PRE_RACE) {
 
-      jsx = <div className='centered'>
-              <br/><br/>
-              <h1>Thanks for racing! Please exit to your right</h1>
-              <h2>¡Gracias por competir! Por favor salir por la derecha</h2>
+      const timeUntilGo = Constants.PRE_RACE_DELAY - this.props.race.preRaceTime;
+      let displaySecs = '';
+      if (timeUntilGo <= 3000 && timeUntilGo > 0) {
+        displaySecs = '3';
+        if (timeUntilGo <= 2000) {
+          displaySecs = '2';
+          if (timeUntilGo <= 1000) {
+            displaySecs = '1';
+          }
+        }
+      }
+
+      jsx = <div className='countdown'>
+              <h1> {displaySecs} </h1>
+            </div>;
+
+    } else if (this.props.race.raceState == Constants.STATE_RACING && !this.props.race.lane1Started && !this.props.race.lane2Started) {
+
+      jsx = <div className='countdown go'>
+              <h1>GO!</h1>
+              <h2>¡Ya!</h2>
             </div>;
     }
 
@@ -79,9 +69,9 @@ export class Finish extends React.Component {
 
   renderAthleteTime() {
 
-    let jsx = <div className='centered'>
-                <h1>&nbsp;</h1>
-                <h2>&nbsp;</h2>
+    let jsx = <div>
+                <h1> </h1>
+                <h2> </h2>
               </div>;
 
     if (this.props.race.raceState == Constants.STATE_POST_RACE && this.props.race.athlete != '') {
@@ -104,7 +94,7 @@ export class Finish extends React.Component {
 
     let jsx = '';
 
-    if (this.props.race['lane' + laneNum + 'Started'] == true) {
+    if (this.props.race.raceState != Constants.STATE_PRE_RACE && this.props.race['lane' + laneNum + 'Started'] == true) {
 
       jsx = (
         <LaneTimer laneTitle={'Lane ' + laneNum} falseStart={this.props.race['lane' + laneNum + 'FalseStart']} displayTime={this.formatTime(this.props.race['lane' + laneNum + 'FinishTime'])} ></LaneTimer>
@@ -116,44 +106,56 @@ export class Finish extends React.Component {
 
   }
 
+  renderAttract() {
+
+    let jsx = '';
+
+    if (this.props.race.raceState == Constants.STATE_ATTRACT_LOOP) {
+
+      jsx = <AttractLoop en='Want to race?' es='¿Quieres competir?'></AttractLoop>;
+
+    }
+
+    return jsx;
+
+  }
+
   render() {
 
     return <div className='screen finish-screen'>
+
+            { this.renderAttract() }
+
             <Row>
+
               <Col xs={ 12 }>
 
-                { this.renderHeader() }
+                { this.renderCountdown() }
 
-                <Row>
+                <Row className='athlete-time'>
 
                   <Col xs={ 4 } xsOffset={4}>
-                    <TransitionGroup>
-                      { this.renderAthleteTime() }
-                    </TransitionGroup>
+                    { this.renderAthleteTime() }
                   </Col>
 
                 </Row>
 
                 <Row>
+
                   <Col xs={ 4 } xsOffset={2}>
-                    <TransitionGroup>
-                      { this.renderLaneTime(1) }
-                    </TransitionGroup>
+                    { this.renderLaneTime(1) }
                   </Col>
 
                   <Col xs={ 4 }>
-                    <TransitionGroup>
-                      { this.renderLaneTime(2) }
-                    </TransitionGroup>
+                    { this.renderLaneTime(2) }
                   </Col>
 
                 </Row>
 
-                { this.renderFooter() }
-
               </Col>
+
             </Row>
-            <h4><span className='faded-text'>(Race state: {this.props.race.raceState})</span></h4>
+
           </div>;
 
   }

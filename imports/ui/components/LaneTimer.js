@@ -24,10 +24,11 @@ export class LaneTimer extends React.Component {
 
   render() {
 
-    return <div>
-      <h1>{ this.props.laneTitle}{ this.props.falseStart ? <span className='false-start'> (FALSE START)</span> : '' }</h1>
-      <h2>Time: { this.props.displayTime }</h2>
+    return <div className='lane-timer'>
+      <h2>{ this.props.laneTitle }</h2>
+      <h1>{ this.props.displayTime }</h1>
     </div>;
 
   }
+
 }
