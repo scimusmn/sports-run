@@ -10,3 +10,4 @@ work
 # TN - Large assets
 *.mov
 *.wav
+arena/videos/*.jpg
