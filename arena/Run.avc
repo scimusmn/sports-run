@@ -356,16 +356,12 @@
     <audioLayer>
       <settings>
         <parameters>
-          <parameter orgDuration="6.005995e+009" duration="5000">
+          <parameter>
             <name value="Position"/>
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-<<<<<<< HEAD
             <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
-=======
-            <values curValue="824381" defaultValue="0" startValue="0" stopValue="1201199"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -375,7 +371,7 @@
             <linkMultiplier curValue="1" defaultValue="1" startValue="1" stopValue="4096"/>
             <linkModifier curValue="0" defaultValue="0" startValue="0" stopValue="1"/>
           </parameter>
-          <parameter>
+          <parameter orgDuration="5263.15789" duration="5000">
             <name value="Pitch"/>
             <nameGiven value="Pitch"/>
             <textValue value=""/>
@@ -519,7 +515,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
+            <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -676,11 +672,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-<<<<<<< HEAD
             <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
-=======
-            <values curValue="1158700" defaultValue="0" startValue="0" stopValue="1201199"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -827,7 +819,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
+            <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -970,7 +962,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
+            <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1138,11 +1130,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-<<<<<<< HEAD
             <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
-=======
-            <values curValue="1194791" defaultValue="0" startValue="0" stopValue="1194792"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1285,11 +1273,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-<<<<<<< HEAD
             <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
-=======
-            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1631,11 +1615,7 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-<<<<<<< HEAD
                 <values curValue="25024.9792" defaultValue="0" startValue="0" stopValue="25025"/>
-=======
-                <values curValue="24093.1659" defaultValue="0" startValue="0" stopValue="25025"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1682,11 +1662,7 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-<<<<<<< HEAD
                 <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
-=======
-                <values curValue="1156471" defaultValue="0" startValue="0" stopValue="1201199"/>
->>>>>>> 12c9111e029250c0d1c057ec786a791962573a0b
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
