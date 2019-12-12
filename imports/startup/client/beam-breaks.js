@@ -16,8 +16,15 @@ function globalKeydown(key) {
     case 65:
 
       // 'A' Lane 2 ready
-      OnBeamBreak('ln2_start');
-      lockCheck('s2');
+      // One lane setup
+      // Both lane sensors will register as Lane 1 occupancy
+      OnBeamBreak('ln1_start');
+      lockCheck('s1');
+      //
+      // Two lane setup
+      // OnBeamBreak('ln2_start');
+      // lockCheck('s2');
+      //
       break;
     case 80:
 
@@ -28,8 +35,15 @@ function globalKeydown(key) {
     case 186:
 
       // ';' Lane 2 finish
-      OnBeamBreak('ln2_finish');
-      lockCheck('f2');
+      // One lane setup
+      // Both lane sensors will register as Lane 1 finish
+      OnBeamBreak('ln1_finish');
+      lockCheck('f1');
+      //
+      // Two lane setup
+      // OnBeamBreak('ln2_finish');
+      // lockCheck('f2');
+      //
       break;
   }
 

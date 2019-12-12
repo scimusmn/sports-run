@@ -122,41 +122,41 @@ export class Finish extends React.Component {
 
   render() {
 
-    return <div className='screen finish-screen'>
+    return <div className="screen finish-screen">
 
-            { this.renderAttract() }
+      {this.renderAttract()}
 
-            <Row>
+      <Row>
 
-              <Col xs={ 12 }>
+        <Col xs={12}>
 
-                { this.renderCountdown() }
+          {this.renderCountdown()}
 
-                <Row className='athlete-time'>
+          <Row className="athlete-time">
 
-                  <Col xs={ 4 } xsOffset={4}>
-                    { this.renderAthleteTime() }
-                  </Col>
+            <Col xs={4} xsOffset={4}>
+              {this.renderAthleteTime()}
+            </Col>
 
-                </Row>
+          </Row>
 
-                <Row>
+          <Row>
 
-                  <Col xs={ 4 } xsOffset={2}>
-                    { this.renderLaneTime(1) }
-                  </Col>
+            <Col xs={4} xsOffset={4}>
+              {this.renderLaneTime(1)}
+            </Col>
 
-                  <Col xs={ 4 }>
-                    { this.renderLaneTime(2) }
-                  </Col>
+            {/*<Col xs={ 4 }>*/}
+            {/*  { this.renderLaneTime(2) }*/}
+            {/*</Col>*/}
 
-                </Row>
+          </Row>
 
-              </Col>
+        </Col>
 
-            </Row>
+      </Row>
 
-          </div>;
+    </div>;
 
   }
 }
