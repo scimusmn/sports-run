@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScreenSetup name="ScreenSetup">
+	<versionInfo name="Resolume Arena" majorVersion="5" minorVersion="1" microVersion="2" revision="56477"/>
+	<sizing>
+		<inputs>
+			<InputSize name="3:1" width="800" height="600"/>
+			<InputSize name="3:2" width="800" height="600"/>
+			<InputSize name="3:3" width="800" height="600"/>
+			<InputSize name="3:4" width="800" height="600"/>
+			<InputSize name="0:1" width="7104" height="1080"/>
+		</inputs>
+	</sizing>
+	<screens>
+		<Screen name="Screen 1" uniqueId="1664228204106">
+			<Params name="Params">
+				<Param name="Name" default="" value="Screen 1"/>
+			</Params>
+			<guides>
+				<ScreenGuide name="ScreenGuide" type="0"/>
+				<ScreenGuide name="ScreenGuide" type="1"/>
+			</guides>
+			<layers>
+				<Slice uniqueId="1664228204106">
+					<Params name="Common">
+						<Param name="Name" default="Layer" value="Slice 1"/>
+					</Params>
+					<InputRect orientation="0">
+						<v x="6373" y="0"/>
+						<v x="8673" y="0"/>
+						<v x="8673" y="1079.9998779296875"/>
+						<v x="6373" y="1079.9998779296875"/>
+					</InputRect>
+					<OutputRect orientation="0">
+						<v x="0" y="0"/>
+						<v x="1920.0001220703125" y="0"/>
+						<v x="1920.0001220703125" y="1080"/>
+						<v x="0" y="1080"/>
+					</OutputRect>
+					<Warper>
+						<BezierWarper controlWidth="4" controlHeight="4">
+							<vertices>
+								<v x="0" y="0"/>
+								<v x="640.00006103515625" y="0"/>
+								<v x="1280" y="0"/>
+								<v x="1920.0001220703125" y="0"/>
+								<v x="0" y="360"/>
+								<v x="640.00006103515625" y="360"/>
+								<v x="1279.9998779296875" y="360"/>
+								<v x="1920.0001220703125" y="360"/>
+								<v x="0" y="720"/>
+								<v x="640.00006103515625" y="720"/>
+								<v x="1279.9998779296875" y="720"/>
+								<v x="1920.0001220703125" y="720"/>
+								<v x="0" y="1080"/>
+								<v x="640.00006103515625" y="1080"/>
+								<v x="1280" y="1080"/>
+								<v x="1920.0001220703125" y="1080"/>
+							</vertices>
+						</BezierWarper>
+						<Homography>
+							<src>
+								<v x="0" y="0"/>
+								<v x="1920.0001220703125" y="0"/>
+								<v x="1920.0001220703125" y="1080"/>
+								<v x="0" y="1080"/>
+							</src>
+							<dst>
+								<v x="0" y="0"/>
+								<v x="1920.0001220703125" y="0"/>
+								<v x="1920.0001220703125" y="1080"/>
+								<v x="0" y="1080"/>
+							</dst>
+						</Homography>
+					</Warper>
+					<SliceMask>
+						<ShapeObject>
+							<Rect orientation="0">
+								<v x="5767.6650390625" y="8.50030517578125"/>
+								<v x="7116.2470703125" y="8.50030517578125"/>
+								<v x="7116.2470703125" y="1098.78564453125"/>
+								<v x="5767.6650390625" y="1098.78564453125"/>
+							</Rect>
+							<Shape>
+								<Contour closed="1">
+									<points>
+										<v x="5767.6650390625" y="8.5002937316894531"/>
+										<v x="5767.6650390625" y="1098.78564453125"/>
+										<v x="7116.24755859375" y="1098.78564453125"/>
+										<v x="7116.24755859375" y="8.5002937316894531"/>
+									</points>
+									<segments>LLLL</segments>
+								</Contour>
+							</Shape>
+						</ShapeObject>
+					</SliceMask>
+				</Slice>
+			</layers>
+			<OutputDevice>
+				<OutputDeviceVirtual name="Virtual" deviceId="Virtual" idHash="0" width="800" height="600"/>
+			</OutputDevice>
+		</Screen>
+		<Screen name="Screen 2" uniqueId="1664242352865">
+			<Params name="Params">
+				<Param name="Name" default="" value="Screen 2"/>
+			</Params>
+			<guides>
+				<ScreenGuide name="ScreenGuide" type="0"/>
+				<ScreenGuide name="ScreenGuide" type="1"/>
+			</guides>
+			<layers>
+				<Slice uniqueId="1664242352869">
+					<Params name="Common">
+						<Param name="Name" default="Layer" value="Slice 2"/>
+					</Params>
+					<InputRect orientation="0">
+						<v x="4200" y="-11"/>
+						<v x="6500" y="-11"/>
+						<v x="6500" y="1069"/>
+						<v x="4200" y="1069"/>
+					</InputRect>
+					<OutputRect orientation="0">
+						<v x="0" y="0"/>
+						<v x="1920" y="0"/>
+						<v x="1920" y="1080"/>
+						<v x="0" y="1080"/>
+					</OutputRect>
+					<Warper>
+						<BezierWarper controlWidth="4" controlHeight="4">
+							<vertices>
+								<v x="3.0517578125e-005" y="0"/>
+								<v x="640" y="0"/>
+								<v x="1280" y="0"/>
+								<v x="1920" y="0"/>
+								<v x="3.0517578125e-005" y="360"/>
+								<v x="640" y="360"/>
+								<v x="1280" y="360"/>
+								<v x="1920" y="360"/>
+								<v x="3.0517578125e-005" y="720"/>
+								<v x="640" y="720"/>
+								<v x="1280" y="720"/>
+								<v x="1920" y="720"/>
+								<v x="3.0517578125e-005" y="1080"/>
+								<v x="640" y="1080"/>
+								<v x="1280" y="1080"/>
+								<v x="1920" y="1080"/>
+							</vertices>
+						</BezierWarper>
+						<Homography>
+							<src>
+								<v x="0" y="0"/>
+								<v x="1920" y="0"/>
+								<v x="1920" y="1080"/>
+								<v x="0" y="1080"/>
+							</src>
+							<dst>
+								<v x="0" y="0"/>
+								<v x="1920" y="0"/>
+								<v x="1920" y="1080"/>
+								<v x="0" y="1080"/>
+							</dst>
+						</Homography>
+					</Warper>
+				</Slice>
+			</layers>
+			<OutputDevice>
+				<OutputDeviceVirtual name="Virtual" deviceId="Virtual" idHash="0" width="800" height="600"/>
+			</OutputDevice>
+		</Screen>
+		<Screen name="Screen 3" uniqueId="1664242352866">
+			<Params name="Params">
+				<Param name="Name" default="" value="Screen 3"/>
+			</Params>
+			<guides>
+				<ScreenGuide name="ScreenGuide" type="0"/>
+				<ScreenGuide name="ScreenGuide" type="1"/>
+			</guides>
+			<layers>
+				<Slice uniqueId="1664242352872">
+					<Params name="Common">
+						<Param name="Name" default="Layer" value="Slice 3"/>
+					</Params>
+					<InputRect orientation="0">
+						<v x="2276" y="-13"/>
+						<v x="4576" y="-13"/>
+						<v x="4576" y="1065"/>
+						<v x="2276" y="1065"/>
+					</InputRect>
+					<OutputRect orientation="0">
+						<v x="0" y="0"/>
+						<v x="1927" y="0"/>
+						<v x="1927" y="1080"/>
+						<v x="0" y="1080"/>
+					</OutputRect>
+					<Warper>
+						<BezierWarper controlWidth="4" controlHeight="4">
+							<vertices>
+								<v x="0" y="0"/>
+								<v x="639" y="0.66666668653488159"/>
+								<v x="1278" y="1.3333332538604736"/>
+								<v x="1917" y="2"/>
+								<v x="0" y="360"/>
+								<v x="640.11114501953125" y="359.83953857421875"/>
+								<v x="1280.2220458984375" y="359.6790771484375"/>
+								<v x="1920.3333740234375" y="359.51861572265625"/>
+								<v x="0" y="720"/>
+								<v x="641.22222900390625" y="719.01251220703125"/>
+								<v x="1282.4444580078125" y="718.02471923828125"/>
+								<v x="1923.6666259765625" y="717.03717041015625"/>
+								<v x="0" y="1080"/>
+								<v x="642.3333740234375" y="1078.185302734375"/>
+								<v x="1284.6666259765625" y="1076.3704833984375"/>
+								<v x="1927" y="1074.5557861328125"/>
+							</vertices>
+						</BezierWarper>
+						<Homography>
+							<src>
+								<v x="0" y="0"/>
+								<v x="1927" y="0"/>
+								<v x="1927" y="1080"/>
+								<v x="0" y="1080"/>
+							</src>
+							<dst>
+								<v x="0" y="0"/>
+								<v x="1927" y="0"/>
+								<v x="1927" y="1080"/>
+								<v x="0" y="1080"/>
+							</dst>
+						</Homography>
+					</Warper>
+				</Slice>
+			</layers>
+			<OutputDevice>
+				<OutputDeviceVirtual name="Virtual" deviceId="Virtual" idHash="0" width="800" height="600"/>
+			</OutputDevice>
+		</Screen>
+		<Screen name="Screen 4" uniqueId="1664242352867">
+			<Params name="Params">
+				<Param name="Name" default="" value="Screen 4"/>
+			</Params>
+			<guides>
+				<ScreenGuide name="ScreenGuide" type="0"/>
+				<ScreenGuide name="ScreenGuide" type="1"/>
+			</guides>
+			<layers>
+				<Slice uniqueId="1664242352877">
+					<Params name="Common">
+						<Param name="Name" default="Layer" value="Slice 4"/>
+					</Params>
+					<InputRect orientation="0">
+						<v x="113" y="-9"/>
+						<v x="2413" y="-9"/>
+						<v x="2413" y="1071"/>
+						<v x="113" y="1071"/>
+					</InputRect>
+					<OutputRect orientation="0">
+						<v x="0" y="0"/>
+						<v x="1926.07373046875" y="0"/>
+						<v x="1926.07373046875" y="1081.37060546875"/>
+						<v x="0" y="1081.37060546875"/>
+					</OutputRect>
+					<Warper>
+						<BezierWarper controlWidth="4" controlHeight="4">
+							<vertices>
+								<v x="0" y="0"/>
+								<v x="640" y="0"/>
+								<v x="1280" y="0"/>
+								<v x="1920" y="0"/>
+								<v x="0" y="360"/>
+								<v x="640.67486572265625" y="360.15228271484375"/>
+								<v x="1281.3497314453125" y="360.30453491210937"/>
+								<v x="1922.0245361328125" y="360.45687866210937"/>
+								<v x="0" y="720"/>
+								<v x="641.3497314453125" y="720.3045654296875"/>
+								<v x="1282.699462890625" y="720.60906982421875"/>
+								<v x="1924.0491943359375" y="720.9136962890625"/>
+								<v x="0" y="1080"/>
+								<v x="642.02459716796875" y="1080.4569091796875"/>
+								<v x="1284.049072265625" y="1080.9136962890625"/>
+								<v x="1926.07373046875" y="1081.37060546875"/>
+							</vertices>
+						</BezierWarper>
+						<Homography>
+							<src>
+								<v x="0" y="0"/>
+								<v x="1926.07373046875" y="0"/>
+								<v x="1926.07373046875" y="1081.37060546875"/>
+								<v x="0" y="1081.37060546875"/>
+							</src>
+							<dst>
+								<v x="0" y="0"/>
+								<v x="1926.07373046875" y="0"/>
+								<v x="1926.07373046875" y="1081.37060546875"/>
+								<v x="0" y="1081.37060546875"/>
+							</dst>
+						</Homography>
+					</Warper>
+					<SliceMask>
+						<ShapeObject>
+							<Rect orientation="0">
+								<v x="186.0001220703125" y="-9"/>
+								<v x="2786" y="-9"/>
+								<v x="2786" y="1064.285400390625"/>
+								<v x="186.0001220703125" y="1064.285400390625"/>
+							</Rect>
+							<Shape>
+								<Contour closed="1">
+									<points>
+										<v x="186.0001220703125" y="-9"/>
+										<v x="186.0001220703125" y="1064.285400390625"/>
+										<v x="2786.000244140625" y="1064.285400390625"/>
+										<v x="2786.000244140625" y="-9"/>
+									</points>
+									<segments>LLLL</segments>
+								</Contour>
+							</Shape>
+						</ShapeObject>
+					</SliceMask>
+				</Slice>
+			</layers>
+			<OutputDevice>
+				<OutputDeviceVirtual name="Virtual" deviceId="Virtual" idHash="0" width="800" height="600"/>
+			</OutputDevice>
+		</Screen>
+	</screens>
+	<SoftEdging/>
+</ScreenSetup>
+

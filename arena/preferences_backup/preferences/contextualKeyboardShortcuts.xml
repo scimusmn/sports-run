@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<avenue>
+  <versionInfo name="Resolume Arena" majorVersion="5" minorVersion="1" microVersion="2"
+               revision="56477" id="1"/>
+  <shortcuts>
+    <contextualShortcuts>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/video/scale/values"
+                        type="0" optionIndex="-1" loop="0" description="S" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1" useMousePosition="1" mouseAxis="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="2" loop="0" description="C" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="6" contextIndex3="-1" path="/layer#1/clip#7/connect"
+                        type="0" optionIndex="-1" loop="0" description="7" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="1" loop="0" description="X" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/track#3/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + #" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="0" loop="0" description="Z" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/direction"
+                        type="0" optionIndex="1" loop="0" description="." pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="4" contextIndex3="-1" path="/layer#1/clip#5/connect"
+                        type="0" optionIndex="-1" loop="0" description="5" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="9" contextIndex3="-1" path="/layer#1/clip#10/connect"
+                        type="0" optionIndex="-1" loop="0" description="0" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="1" loop="0" description="X" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="5" contextIndex3="-1" path="/layer#1/clip#6/connect"
+                        type="0" optionIndex="-1" loop="0" description="6" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/connect"
+                        type="0" optionIndex="-1" loop="0" description="4" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/audio/position/direction"
+                        type="0" optionIndex="2" loop="0" description="/" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="7" loop="0" description="N" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="5" contextIndex2="-1" contextIndex3="-1" path="/track#6/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + &#94;"
+                        pianoMode="0" invertValue="0" relativeStepValue="0.00499999989"
+                        startValue="0" stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/connect"
+                        type="0" optionIndex="-1" loop="0" description="3" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/clear"
+                        type="0" optionIndex="-1" loop="0" description="&#167;" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="6" contextIndex2="-1" contextIndex3="-1" path="/track#7/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + &amp;"
+                        pianoMode="0" invertValue="0" relativeStepValue="0.00499999989"
+                        startValue="0" stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/track#1/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + !" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/video/scaletofit"
+                        type="0" optionIndex="-1" loop="0" description="shift + F" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="4"
+                        contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/select"
+                        type="0" optionIndex="-1" loop="0" description="F1" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/video/positionx/values"
+                        type="0" optionIndex="-1" loop="0" description="P" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1" useMousePosition="1" mouseAxis="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="1" loop="0" description="W" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/values"
+                        type="0" optionIndex="4" loop="0" description="I" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/video/positiony/values"
+                        type="0" optionIndex="-1" loop="0" description="P" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1" useMousePosition="1" mouseAxis="1"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="3" contextIndex2="-1" contextIndex3="-1" path="/track#4/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + $" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/track#2/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + @" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="4" loop="0" description="shift + T" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="8" contextIndex3="-1" path="/layer#1/clip#9/connect"
+                        type="0" optionIndex="-1" loop="0" description="9" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/audio/position/direction"
+                        type="0" optionIndex="1" loop="0" description="." pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="2" loop="0" description="C" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="3" loop="0" description="V" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="7" contextIndex3="-1" path="/layer#1/clip#8/connect"
+                        type="0" optionIndex="-1" loop="0" description="8" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/connect"
+                        type="0" optionIndex="-1" loop="0" description="2" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="5" loop="0" description="B" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="3" loop="0" description="R" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/values"
+                        type="0" optionIndex="5" loop="0" description="O" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="3"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/connect"
+                        type="0" optionIndex="-1" loop="0" description="1" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="4" contextIndex2="-1" contextIndex3="-1" path="/track#5/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + %" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/audio/position/direction"
+                        type="0" optionIndex="0" loop="0" description="," pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/values"
+                        type="0" optionIndex="5" loop="0" description="O" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="2" loop="0" description="shift + E" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="4"
+                        contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/select"
+                        type="0" optionIndex="-1" loop="0" description="F3" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="7" contextIndex2="-1" contextIndex3="-1" path="/track#8/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + *" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="3" loop="0" description="V" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="0" loop="0" description="Q" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="9" contextIndex2="-1" contextIndex3="-1" path="/track#10/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + )" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="7" loop="0" description="N" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="0" contextIndex3="-1" path="/layer#1/clip#1/audio/beatloop"
+                        type="0" optionIndex="5" loop="0" description="B" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/direction"
+                        type="0" optionIndex="2" loop="0" description="/" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="4" loop="0" description="T" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="0" loop="0" description="shift + Q" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="5" loop="0" description="Y" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="1" contextIndex3="-1" path="/layer#1/clip#2/video/beatloop"
+                        type="0" optionIndex="0" loop="0" description="Z" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="2"
+                        contextIndex1="8" contextIndex2="-1" contextIndex3="-1" path="/track#9/connect"
+                        type="0" optionIndex="-1" loop="0" description="shift + (" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="4"
+                        contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/select"
+                        type="0" optionIndex="-1" loop="0" description="F2" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="3" loop="0" description="shift + R" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="3" loop="0" description="R" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="4" loop="0" description="T" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/direction"
+                        type="0" optionIndex="0" loop="0" description="," pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="4" loop="0" description="shift + T" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="3" loop="0" description="shift + R" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="1" loop="0" description="shift + W" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/values"
+                        type="0" optionIndex="4" loop="0" description="I" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="1"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="5" loop="0" description="Y" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="0" loop="0" description="shift + Q" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="1" loop="0" description="shift + W" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="2" loop="0" description="E" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/jumptopointsofinterest"
+                        type="0" optionIndex="0" loop="0" description="Q" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="1" loop="0" description="W" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/jumptopointsofinterest"
+                        type="0" optionIndex="2" loop="0" description="E" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="3" contextIndex3="-1" path="/layer#1/clip#4/audio/position/pointsofinterest"
+                        type="0" optionIndex="5" loop="0" description="shift + Y" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="2" loop="0" description="shift + E" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+      <keyboardShortcut isContextual="1" mappingModeType="2" contextDetermination="1"
+                        contextIndex1="0" contextIndex2="2" contextIndex3="-1" path="/layer#1/clip#3/video/position/pointsofinterest"
+                        type="0" optionIndex="5" loop="0" description="shift + Y" pianoMode="0"
+                        invertValue="0" relativeStepValue="0.00499999989" startValue="0"
+                        stopValue="0"/>
+    </contextualShortcuts>
+  </shortcuts>
+</avenue>

@@ -79,6 +79,7 @@
       <name value="layer 1"/>
       <bypassed value="0"/>
       <opacityAndVolume/>
+      <transitionTime curValue="0" defaultValue="0" startValue="0" stopValue="10"/>
       <autoPilot>
         <action value="3"/>
       </autoPilot>
@@ -204,11 +205,11 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="637020" defaultValue="0" startValue="0" stopValue="960959"/>
+            <values curValue="324135" defaultValue="0" startValue="0" stopValue="960959"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
-            <direction value="3"/>
+            <direction value="0"/>
             <playmode value="1"/>
             <playmodeAway value="0"/>
             <linkMultiplier curValue="1" defaultValue="1" startValue="1" stopValue="4096"/>
@@ -240,7 +241,7 @@
       <solo value="0"/>
       <group value="-1"/>
       <opacityAndVolume/>
-      <transitionTime curValue="0.0995491802" defaultValue="0" startValue="0" stopValue="10"/>
+      <transitionTime curValue="0" defaultValue="0" startValue="0" stopValue="10"/>
       <autoPilot>
         <action value="3"/>
       </autoPilot>
@@ -361,7 +362,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
+            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -672,7 +673,7 @@
             <nameGiven value="Position"/>
             <textValue value=""/>
             <extended value="0"/>
-            <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
+            <values curValue="1" defaultValue="0" startValue="0" stopValue="1"/>
             <pointsOfInterest value="0"/>
             <jumpToPointsOfInterest value="-1"/>
             <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -842,6 +843,7 @@
     <settings>
       <name value="layer 6"/>
       <bypassed value="1"/>
+      <solo value="0"/>
       <opacityAndVolume/>
       <autoPilot>
         <action value="3"/>
@@ -1011,6 +1013,7 @@
       <name value="layer 7"/>
       <bypassed value="1"/>
       <opacityAndVolume/>
+      <transitionTime curValue="0.356992886" defaultValue="0" startValue="0" stopValue="10"/>
       <autoPilot>
         <action value="3"/>
       </autoPilot>
@@ -1329,7 +1332,7 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-                <values curValue="13271.2638" defaultValue="0" startValue="0" stopValue="20020"/>
+                <values curValue="6752.81953" defaultValue="0" startValue="0" stopValue="20020"/>
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1374,11 +1377,11 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-                <values curValue="637020" defaultValue="0" startValue="0" stopValue="960959"/>
+                <values curValue="324135" defaultValue="0" startValue="0" stopValue="960959"/>
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
-                <direction value="3"/>
+                <direction value="0"/>
                 <playmode value="1"/>
                 <playmodeAway value="0"/>
                 <linkMultiplier curValue="1" defaultValue="1" startValue="1" stopValue="4096"/>
@@ -1423,7 +1426,7 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-                <values curValue="17128.1809" defaultValue="0" startValue="0" stopValue="25025"/>
+                <values curValue="25024.9792" defaultValue="0" startValue="0" stopValue="25025"/>
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>
@@ -1470,7 +1473,7 @@
                 <nameGiven value="Position"/>
                 <textValue value=""/>
                 <extended value="0"/>
-                <values curValue="822152" defaultValue="0" startValue="0" stopValue="1201199"/>
+                <values curValue="1201198" defaultValue="0" startValue="0" stopValue="1201199"/>
                 <pointsOfInterest value="0"/>
                 <jumpToPointsOfInterest value="-1"/>
                 <speedFactor curValue="1" defaultValue="1" startValue="0.0001" stopValue="10"/>

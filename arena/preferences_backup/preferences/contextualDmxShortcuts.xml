@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<avenue>
+  <versionInfo name="Resolume Arena" majorVersion="5" minorVersion="1" microVersion="3"
+               revision="56477" id="1"/>
+  <shortcuts>
+    <contextualShortcuts>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/cross/values" type="0" optionIndex="-1" loop="0"
+                   channel="3" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/video/scale/values" type="0" optionIndex="-1"
+                   loop="0" channel="23" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/video/fadeout/values" type="0" optionIndex="-1"
+                   loop="0" channel="22" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link5/values"
+                   type="0" optionIndex="-1" loop="0" channel="39" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/video/rotatex/values" type="0" optionIndex="-1"
+                   loop="0" channel="24" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link7/values"
+                   type="1" optionIndex="-1" loop="0" channel="41" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link7/values" type="1" optionIndex="-1" loop="0"
+                   channel="12" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/connecttrack" type="0" optionIndex="-1" loop="0"
+                   channel="4" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/direction" type="1" optionIndex="0" loop="0"
+                   channel="19" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/rotatex/values"
+                   type="0" optionIndex="-1" loop="0" channel="59" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-1" contextIndex2="-1" contextIndex3="-1" path="/playbackcontroller/resync"
+                   type="0" optionIndex="-1" loop="0" channel="16" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link4/values"
+                   type="0" optionIndex="-1" loop="0" channel="38" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link3/values" type="0" optionIndex="-1" loop="0"
+                   channel="8" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/audio/volume/values" type="0" optionIndex="-1"
+                   loop="0" channel="20" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/bypassed" type="0" optionIndex="-1" loop="0"
+                   channel="1" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/audio/position/playmode"
+                   type="0" optionIndex="0" loop="0" channel="44" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/clear"
+                   type="0" optionIndex="-1" loop="0" channel="29" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-1" contextIndex2="-1" contextIndex3="-1" path="/playbackcontroller/tap"
+                   type="0" optionIndex="-1" loop="0" channel="15" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link1/values"
+                   type="0" optionIndex="-1" loop="0" channel="35" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/opacityandvolume" type="0" optionIndex="-1"
+                   loop="0" channel="0" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link4/values" type="0" optionIndex="-1" loop="0"
+                   channel="9" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/bypassed"
+                   type="0" optionIndex="-1" loop="0" channel="28" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/position/direction"
+                   type="0" optionIndex="0" loop="0" channel="45" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link2/values"
+                   type="0" optionIndex="-1" loop="0" channel="36" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/audio/pan/values" type="0" optionIndex="-1"
+                   loop="0" channel="21" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/position/speed"
+                   type="0" optionIndex="-1" loop="0" channel="46" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link1/values" type="0" optionIndex="-1" loop="0"
+                   channel="6" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-1" contextIndex2="-1" contextIndex3="-1" path="/playbackcontroller/bpm"
+                   type="0" optionIndex="-1" loop="0" channel="14" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-1" contextIndex2="-1" contextIndex3="-1" path="/playbackcontroller/paused"
+                   type="0" optionIndex="-1" loop="0" channel="17" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link5/values" type="0" optionIndex="-1" loop="0"
+                   channel="10" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/anchorz/values"
+                   type="0" optionIndex="-1" loop="0" channel="64" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/solo"
+                   type="0" optionIndex="-1" loop="0" channel="30" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link2/values" type="0" optionIndex="-1" loop="0"
+                   channel="7" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link3/values"
+                   type="0" optionIndex="-1" loop="0" channel="37" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/mixeroption1"
+                   type="0" optionIndex="-1" loop="0" channel="53" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link6/values" type="0" optionIndex="-1" loop="0"
+                   channel="11" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/video/rotatez/values" type="0" optionIndex="-1"
+                   loop="0" channel="26" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/selectdeck" type="0" optionIndex="-1" loop="0"
+                   channel="5" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/video/rotatey/values" type="0" optionIndex="-1"
+                   loop="0" channel="25" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/audio/pan/values"
+                   type="0" optionIndex="-1" loop="0" channel="51" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/rotatez/values"
+                   type="0" optionIndex="-1" loop="0" channel="61" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/connectclip"
+                   type="0" optionIndex="-1" loop="0" channel="34" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/link8/values" type="1" optionIndex="-1" loop="0"
+                   channel="13" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/disconnectall" type="0" optionIndex="-1" loop="0"
+                   channel="2" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/position/playmode"
+                   type="0" optionIndex="0" loop="0" channel="44" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/position/values"
+                   type="0" optionIndex="-1" loop="0" channel="43" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/autopilot/action"
+                   type="1" optionIndex="1" loop="0" channel="49" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/moveup"
+                   type="0" optionIndex="-1" loop="0" channel="32" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/anchorx/values"
+                   type="0" optionIndex="-1" loop="0" channel="62" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/opacityandvolume"
+                   type="0" optionIndex="-1" loop="0" channel="27" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/audio/position/direction"
+                   type="0" optionIndex="0" loop="0" channel="45" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/audio/volume/values"
+                   type="0" optionIndex="-1" loop="0" channel="50" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link8/values"
+                   type="1" optionIndex="-1" loop="0" channel="42" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/width/values"
+                   type="0" optionIndex="-1" loop="0" channel="54" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/scale/values"
+                   type="0" optionIndex="-1" loop="0" channel="56" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/rotatey/values"
+                   type="0" optionIndex="-1" loop="0" channel="60" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/movedown"
+                   type="0" optionIndex="-1" loop="0" channel="33" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/opacity/values"
+                   type="0" optionIndex="-1" loop="0" channel="52" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/audio/position/values"
+                   type="0" optionIndex="-1" loop="0" channel="43" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/anchory/values"
+                   type="0" optionIndex="-1" loop="0" channel="63" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/transitionmixeroption"
+                   type="1" optionIndex="-1" loop="0" channel="48" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="-100" contextIndex2="-100" contextIndex3="-1"
+                   path="/composition/speed" type="1" optionIndex="-1" loop="0"
+                   channel="18" numChannels="1" universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/group"
+                   type="0" optionIndex="1" loop="0" channel="31" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/transitiontime"
+                   type="1" optionIndex="-1" loop="0" channel="47" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/positiony/values"
+                   type="0" optionIndex="-1" loop="0" channel="58" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/height/values"
+                   type="0" optionIndex="-1" loop="0" channel="55" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/video/positionx/values"
+                   type="0" optionIndex="-1" loop="0" channel="57" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link6/values"
+                   type="0" optionIndex="-1" loop="0" channel="40" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link5/values"
+                   type="0" optionIndex="-1" loop="0" channel="77" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link7/values"
+                   type="1" optionIndex="-1" loop="0" channel="79" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/rotatex/values"
+                   type="0" optionIndex="-1" loop="0" channel="97" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/position/playmode"
+                   type="0" optionIndex="0" loop="0" channel="82" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/position/values"
+                   type="0" optionIndex="-1" loop="0" channel="81" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/autopilot/action"
+                   type="1" optionIndex="1" loop="0" channel="87" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/moveup"
+                   type="0" optionIndex="-1" loop="0" channel="70" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/anchorx/values"
+                   type="0" optionIndex="-1" loop="0" channel="100" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/position/speed"
+                   type="0" optionIndex="-1" loop="0" channel="84" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link3/values"
+                   type="0" optionIndex="-1" loop="0" channel="75" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/position/direction"
+                   type="0" optionIndex="0" loop="0" channel="83" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/anchorz/values"
+                   type="0" optionIndex="-1" loop="0" channel="102" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/solo"
+                   type="0" optionIndex="-1" loop="0" channel="68" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/audio/pan/values"
+                   type="0" optionIndex="-1" loop="0" channel="89" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/rotatez/values"
+                   type="0" optionIndex="-1" loop="0" channel="99" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/clear"
+                   type="0" optionIndex="-1" loop="0" channel="67" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link1/values"
+                   type="0" optionIndex="-1" loop="0" channel="73" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/audio/position/playmode"
+                   type="0" optionIndex="0" loop="0" channel="82" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link4/values"
+                   type="0" optionIndex="-1" loop="0" channel="76" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/bypassed"
+                   type="0" optionIndex="-1" loop="0" channel="66" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/mixeroption1"
+                   type="0" optionIndex="-1" loop="0" channel="91" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link2/values"
+                   type="0" optionIndex="-1" loop="0" channel="74" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/connectclip"
+                   type="0" optionIndex="-1" loop="0" channel="72" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/audio/position/direction"
+                   type="0" optionIndex="0" loop="0" channel="83" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link8/values"
+                   type="1" optionIndex="-1" loop="0" channel="80" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/width/values"
+                   type="0" optionIndex="-1" loop="0" channel="92" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/scale/values"
+                   type="0" optionIndex="-1" loop="0" channel="94" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/audio/volume/values"
+                   type="0" optionIndex="-1" loop="0" channel="88" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/rotatey/values"
+                   type="0" optionIndex="-1" loop="0" channel="98" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/movedown"
+                   type="0" optionIndex="-1" loop="0" channel="71" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/opacityandvolume"
+                   type="0" optionIndex="-1" loop="0" channel="65" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/height/values"
+                   type="0" optionIndex="-1" loop="0" channel="93" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/opacity/values"
+                   type="0" optionIndex="-1" loop="0" channel="90" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/group"
+                   type="0" optionIndex="1" loop="0" channel="69" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/positionx/values"
+                   type="0" optionIndex="-1" loop="0" channel="95" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link6/values"
+                   type="0" optionIndex="-1" loop="0" channel="78" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/transitionmixeroption"
+                   type="1" optionIndex="-1" loop="0" channel="86" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/transitiontime"
+                   type="1" optionIndex="-1" loop="0" channel="85" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/audio/position/values"
+                   type="0" optionIndex="-1" loop="0" channel="81" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/anchory/values"
+                   type="0" optionIndex="-1" loop="0" channel="101" numChannels="1"
+                   universe="0" invertValue="0"/>
+      <dmxShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                   contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/video/positiony/values"
+                   type="0" optionIndex="-1" loop="0" channel="96" numChannels="1"
+                   universe="0" invertValue="0"/>
+    </contextualShortcuts>
+  </shortcuts>
+</avenue>
